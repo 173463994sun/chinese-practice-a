@@ -138,6 +138,18 @@
       font-size: 0.82rem;
       line-height: 1.55;
     }
+    .current-writing {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 9px 13px;
+      border: 1px solid var(--green);
+      border-radius: 6px;
+      color: var(--green);
+      background: #fff;
+      font-weight: 750;
+      text-decoration: none;
+    }
+    .current-writing:hover { background: var(--green-soft); }
     nav {
       position: sticky;
       top: 0;
@@ -358,6 +370,7 @@
         <div class="route" aria-label="学习顺序">
           <span>1 主线语言</span><span>2 阅读理解</span><span>3 口述写作</span><span>4 基础复查</span>
         </div>
+        <a class="current-writing" href="writing/forbidden-city-public-bridge/">打开当前故宫写作公共桥</a>
       </div>
       <div class="progress-box">
         <div class="progress-track" aria-hidden="true"><div class="progress-bar" id="progressBar"></div></div>

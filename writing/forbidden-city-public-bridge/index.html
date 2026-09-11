@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>语文写作学习单｜故宫写作公共桥</title>
+  <style>
+    :root{--ink:#202623;--muted:#69716d;--line:#d8ddd9;--paper:#fff;--bg:#f3f5f2;--red:#8f2f2d;--jade:#1f6b5b;--gold:#a66d16;--soft:#edf4f0;--warm:#f8f2e8}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.65;letter-spacing:0}
+    button,input,textarea,select{font:inherit} button{min-height:46px;border:0;border-radius:6px;padding:10px 18px;background:var(--red);color:#fff;font-weight:700;cursor:pointer}
+    button.secondary{background:#fff;color:var(--ink);border:1px solid var(--line)} button.jade{background:var(--jade)} button:disabled{opacity:.45;cursor:not-allowed}
+    a{color:var(--jade)} .shell{max-width:980px;margin:auto;background:var(--paper);min-height:100vh}.top{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);padding:12px 20px}
+    .progress-row{display:flex;align-items:center;gap:12px}.progress{height:8px;background:#e7ebe8;border-radius:4px;overflow:hidden;flex:1}.progress span{display:block;height:100%;width:11.11%;background:var(--jade);transition:width .2s}.progress-text{font-size:14px;color:var(--muted);min-width:44px;text-align:right}
+    header{padding:34px 28px 20px;border-bottom:1px solid var(--line)} h1{font-size:30px;margin:0 0 6px} h2{font-size:22px;margin:0 0 12px} h3{font-size:18px;margin:22px 0 8px} p{margin:8px 0}.eyebrow{color:var(--red);font-weight:800}.goal{margin-top:14px;padding:14px 16px;background:var(--soft);border-left:4px solid var(--jade)}
+    main{padding:24px 28px 48px}.step{display:none}.step.active{display:block}.step-label{color:var(--red);font-weight:800;margin-bottom:6px}.instruction{padding:14px 16px;margin:16px 0;background:var(--warm);border-left:4px solid var(--gold);font-weight:700}
+    .mode{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0}.mode div{border:1px solid var(--line);padding:14px;border-radius:6px}.mode b{display:block;color:var(--jade)}
+    .materials,.video-grid,.map-grid,.bridge-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.material,.video-card,.map-card,.bridge-card{border:1px solid var(--line);border-radius:6px;padding:16px;background:#fff}.material{display:flex;gap:12px;align-items:flex-start}.material input{width:22px;height:22px;margin-top:3px;flex:none}.material strong{display:block;font-size:18px}.material small,.fine{color:var(--muted);font-size:13px}.selected-count{margin:14px 0;font-weight:800;color:var(--jade)}
+    .video-card{border-top:4px solid var(--red)}.video-tag{display:inline-block;font-size:13px;color:var(--red);font-weight:800}.video-card a{display:inline-block;margin-top:10px;font-weight:700}.stop-line{margin-top:10px;padding-top:10px;border-top:1px dashed var(--line)}
+    label.field{display:block;margin:14px 0;font-weight:700} textarea,input[type="text"],select{width:100%;border:1px solid #b9c1bc;border-radius:5px;background:#fff;padding:11px 12px;color:var(--ink)} textarea{min-height:86px;resize:vertical;font-weight:400} textarea.short{min-height:58px}.field small{display:block;font-weight:400;color:var(--muted)}
+    .slot{border:1px solid var(--line);border-left:4px solid var(--jade);padding:16px;margin:14px 0;border-radius:5px}.map-center{padding:18px;border:2px solid var(--red);border-radius:6px;background:#fff9f6;margin:16px 0}.map-card{border-top:4px solid var(--gold)}
+    .bridge-flow{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin:12px 0}.bridge-flow span{padding:8px 5px;background:var(--soft);border-radius:4px;text-align:center;font-size:13px;font-weight:700}.bridge-card{border-top:4px solid var(--jade)}
+    details{border:1px solid var(--line);border-radius:6px;margin:14px 0;background:#fafbfa} summary{padding:13px 15px;font-weight:800;cursor:pointer} details>div{padding:0 15px 15px}.parent-box{background:#f5f2f0;border:1px solid #dbcfc9;border-radius:6px;padding:15px;margin:18px 0}.parent-box h3{margin-top:0;color:#6d3730}
+    .word-groups{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.word-group{padding:12px;border:1px solid var(--line);border-radius:6px}.word-group b{display:block;margin-bottom:5px}.chips{display:flex;flex-wrap:wrap;gap:7px}.chip{border:1px solid #c5ccc7;border-radius:16px;padding:4px 9px;background:#fff;font-size:14px;color:var(--ink)}
+    .draft{border:1px solid #b7bcb8;padding:24px;margin:18px 0;background:#fff;min-height:260px}.draft-title{text-align:center;font-size:24px;font-weight:800;margin-bottom:18px}.draft p{text-indent:2em;margin:12px 0;white-space:pre-wrap}.empty{color:var(--muted);font-style:italic}.checks{display:grid;gap:10px}.check{display:flex;gap:10px;align-items:flex-start;padding:12px;border:1px solid var(--line);border-radius:5px}.check input{width:22px;height:22px;flex:none}.actions{display:flex;justify-content:space-between;gap:12px;margin-top:24px}.actions button:last-child{margin-left:auto}.notice{font-size:14px;color:var(--muted);margin-top:16px}
+    @media(max-width:700px){header,main{padding-left:18px;padding-right:18px}h1{font-size:26px}.materials,.video-grid,.map-grid,.bridge-grid,.mode,.word-groups{grid-template-columns:1fr}.bridge-flow{grid-template-columns:repeat(2,1fr)}.actions{flex-wrap:wrap}.actions button{flex:1;min-width:130px}}
+    @media print{body{background:#fff}.top,.actions,.video-card a,.parent-box{display:none!important}.shell{max-width:none}.step{display:block!important;break-after:page}.step:last-child{break-after:auto}textarea,input,select{border:0;border-bottom:1px solid #777;border-radius:0}.material{break-inside:avoid}}
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <div class="top"><div class="progress-row"><div class="progress"><span id="progressFill"></span></div><div class="progress-text" id="progressText">1 / 9</div></div></div>
+    <header>
+      <div class="eyebrow">四上第一单元 · 推荐一个好地方</div>
+      <h1>《请到故宫来》写作公共桥</h1>
+      <p>先找到自己真想讲的，再把一个个画面说清楚。</p>
+      <div class="goal">今天不是填完所有格子。你负责选择和口述，家长负责读题和忠实记录，最后由你确认。</div>
+    </header>
+    <main>
+      <section class="step active" data-step="0">
+        <div class="step-label">第1步 · 先定合作方式</div>
+        <h2>思想归你，记录交给家长</h2>
+        <div class="mode">
+          <div><b>孩子负责</b>选想写的内容、说自己的发现、决定中心和每段第一句。</div>
+          <div><b>家长负责</b>读题、打开资料、照原话打字；不替孩子选、不补完整句。</div>
+        </div>
+        <div class="instruction">先口述：如果朋友第一次来故宫，我最想让他在哪个地方停下来？为什么？</div>
+        <label class="field">第一次回答（家长照原话记录）<textarea data-save="baseline" placeholder="等待孩子完整说完，再记录。"></textarea></label>
+        <details><summary>孩子30秒还没开始时再打开</summary><div><p>只问一个更小的问题：“你脑中先出现的是一座建筑、一个物件，还是一个发生过的场面？”孩子选完后继续自己说。</p></div></details>
+        <div class="actions"><button type="button" data-next>第一次说完了</button></div>
+      </section>
+
+      <section class="step" data-step="1">
+        <div class="step-label">第2步 · 浏览素材池</div>
+        <h2>先选有感觉的，不急着决定段落</h2>
+        <p>最多勾选3项。这里只提示观察方向，不告诉你应该赞美什么。</p>
+        <div class="materials">
+          <label class="material"><input type="checkbox" data-material="太和殿与广场"><span><strong>太和殿与广场</strong>回想从远处走近时，大小、位置和人的感觉。</span></label>
+          <label class="material"><input type="checkbox" data-material="太和门铜狮"><span><strong>太和门铜狮</strong>观察两只铜狮相同和不同的地方。</span></label>
+          <label class="material"><input type="checkbox" data-material="宫里的水缸"><span><strong>宫里的水缸</strong>想一想它放在哪里、外表怎样、过去用来做什么。</span></label>
+          <label class="material"><input type="checkbox" data-material="螭首与千龙吐水"><span><strong>螭首与千龙吐水</strong>看静止的石雕在大雨中出现什么变化。</span></label>
+          <label class="material"><input type="checkbox" data-material="屋顶与脊兽"><span><strong>屋顶与脊兽</strong>观察屋顶的颜色、层次、排列和细小构件。</span></label>
+          <label class="material"><input type="checkbox" data-material="神武门"><span><strong>神武门</strong>回想走到故宫北门时看见、听见或想到的事情。</span></label>
+          <label class="material"><input type="checkbox" data-material="我自己的另一段记忆"><span><strong>我自己的另一段记忆</strong>不在清单里也可以，名字由你来定。</span></label>
+        </div>
+        <div class="selected-count" id="selectedCount">已选0项，最多3项</div>
+        <label class="field">我自己的素材名称<input type="text" data-save="customMaterial" placeholder="只有选择“我自己的另一段记忆”时填写"></label>
+        <details><summary>家长查证入口：只核事实，不提供中心</summary><div>
+          <p><a href="https://www.dpm.org.cn/show/225724.html" target="_blank" rel="noopener">故宫博物院：太和殿</a></p>
+          <p><a href="https://young.dpm.org.cn/node/170" target="_blank" rel="noopener">故宫青少网站：太和门铜狮等导览</a></p>
+          <p><a href="https://www.dpm.org.cn/lemmas/244202.html" target="_blank" rel="noopener">故宫博物院：熏缸化冰</a></p>
+          <p><a href="https://www.dpm.org.cn/explore/building/236456.html" target="_blank" rel="noopener">故宫博物院：神武门</a></p>
+        </div></details>
+        <div class="actions"><button class="secondary" type="button" data-back>上一步</button><button type="button" data-next>我选好了</button></div>
+      </section>
+
+      <section class="step" data-step="2">
+        <div class="step-label">第3步 · 看几个短片段</div>
+        <h2>视频是取景器，不是考试</h2>
+        <p>只打开与自己候选素材有关的1至2个。看到想写的画面就暂停，不做视频笔记。</p>
+        <div class="video-grid">
+          <article class="video-card"><span class="video-tag">整体与空间</span><h3>从广场走向太和殿</h3><p>进入《我要去故宫》，选择“太和殿（上）”。</p><a href="https://www.dpm.org.cn/wyqgg.html" target="_blank" rel="noopener">打开故宫儿童微课堂</a><p class="stop-line">暂停信号：我看到了最想带别人停下来的位置。</p></article>
+          <article class="video-card"><span class="video-tag">细节与发现</span><h3>太和殿里的小秘密</h3><p>进入《我要去故宫》，选择“太和殿（下）”。</p><a href="https://www.dpm.org.cn/wyqgg.html" target="_blank" rel="noopener">打开故宫儿童微课堂</a><p class="stop-line">暂停信号：这个细节让我想靠近再看一眼。</p></article>
+          <article class="video-card"><span class="video-tag">动作与作用</span><h3>大雨中的千龙吐水</h3><p>观察水从石雕螭首流出时的方向、声音和整体画面。</p><a href="https://tv.cctv.com/2016/07/22/VIDEZdUCu2K8zpogm1h3qtrv160722.shtml" target="_blank" rel="noopener">打开央视片段</a><p class="stop-line">暂停信号：原来这个构件不只好看，还会做这件事。</p></article>
+        </div>
+        <div class="instruction">看完只说一句：“我想留下第____个画面，因为____。”</div>
+        <label class="field">留下的画面（家长记录）<textarea data-save="videoChoice" placeholder="可以保留两个，暂时不判断哪个一定写进作文。"></textarea></label>
+        <div class="actions"><button class="secondary" type="button" data-back>上一步</button><button type="button" data-next>画面选好了</button></div>
+      </section>
+
+      <section class="step" data-step="3">
+        <div class="step-label">第4步 · 把素材变成自己的</div>
+        <h2>记忆、观察和资料分开说</h2>
+        <p>每个候选素材只记必要内容。空着也可以，不为填满而编造。</p>
+        <div id="observationSlots"></div>
+        <div class="parent-box"><h3>家长陪伴记录</h3><label class="field">这一页最高用了什么帮助？<select data-save="supportObserve"><option value="">请选择</option><option>孩子独立说出</option><option>重复问题后说出</option><option>缩小选择范围后说出</option><option>成人提供了词语</option><option>成人提供了完整意思</option></select></label></div>
+        <div class="actions"><button class="secondary" type="button" data-back>上一步</button><button type="button" data-next>素材整理好了</button></div>
+      </section>
+
+      <section class="step" data-step="4">
+        <div class="step-label">第5步 · 画导图</div>
+        <h2>先决定整篇想让读者明白什么</h2>
+        <div class="map-center"><label class="field">中心：读完我的文章，我最想让别人发现故宫……<textarea class="short" data-save="center" placeholder="先口述意思，不追求漂亮。"></textarea></label></div>
+        <p>把能说明同一个意思的材料放到同一枝。正文可以2段，也可以3段，以内容是否充分为准。</p>
+        <div class="map-grid">
+          <article class="map-card"><h3>第一枝</h3><label class="field">这一枝放哪些材料？<textarea class="short" data-save="branch1Materials"></textarea></label><label class="field">它们共同说明什么？<textarea class="short" data-save="branch1Point"></textarea></label><label class="field">这一段第一句怎么说？<textarea class="short" data-save="branch1First"></textarea></label></article>
+          <article class="map-card"><h3>第二枝</h3><label class="field">这一枝放哪些材料？<textarea class="short" data-save="branch2Materials"></textarea></label><label class="field">它们共同说明什么？<textarea class="short" data-save="branch2Point"></textarea></label><label class="field">这一段第一句怎么说？<textarea class="short" data-save="branch2First"></textarea></label></article>
+          <article class="map-card"><h3>第三枝（有必要才用）</h3><label class="field">这一枝放哪些材料？<textarea class="short" data-save="branch3Materials"></textarea></label><label class="field">它们共同说明什么？<textarea class="short" data-save="branch3Point"></textarea></label><label class="field">这一段第一句怎么说？<textarea class="short" data-save="branch3First"></textarea></label></article>
+        </div>
+        <details><summary>卡住时再打开：只教导图动作</summary><div><p>先比较两项材料：“它们为什么适合放在一起？”孩子能指出同一类后，再让他给这一枝起名字。家长不先说“宏伟”“智慧”等组名。</p></div></details>
+        <div class="parent-box"><h3>家长陪伴记录</h3><label class="field">中心和分枝是怎样完成的？<textarea class="short" data-save="supportMap" placeholder="记录提问或供词，不作评价。"></textarea></label></div>
+        <div class="actions"><button class="secondary" type="button" data-back>上一步</button><button type="button" data-next>导图完成了</button></div>
+      </section>
+
+      <section class="step" data-step="5">
+        <div class="step-label">第6步 · 公共段落桥</div>
+        <h2>每一段都从一个意思走到一个清楚画面</h2>
+        <div class="bridge-flow"><span>本段意思</span><span>来到场景</span><span>具体细节</span><span>知识或故事</span><span>读者所得</span><span>回扣中心</span></div>
+        <p>先完成前两段。第三段只有导图第三枝确实有不同内容时才填写。</p>
+        <div class="bridge-grid" id="bridgeGrid"></div>
+        <details><summary>孩子卡在某一格时再打开</summary><div>
+          <p><b>场景卡住：</b>问“你带我走到哪里？先看见什么？”</p>
+          <p><b>细节卡住：</b>问“哪个位置、样子、动作、声音或变化能证明你的第一句？”</p>
+          <p><b>知识卡住：</b>先标记“不确定”，回官方资料核验；不要凭印象补事实。</p>
+          <p><b>推荐卡住：</b>问“游客知道这些以后，会多看懂什么？”</p>
+        </div></details>
+        <div class="parent-box"><h3>家长陪伴记录</h3><label class="field">哪一格第一次卡住？最高用了什么帮助？<textarea class="short" data-save="supportBridge"></textarea></label></div>
+        <div class="actions"><button class="secondary" type="button" data-back>上一步</button><button type="button" data-next>段落内容说清了</button></div>
+      </section>
+
+      <section class="step" data-step="6">
+        <div class="step-label">第7步 · 好词好句</div>
+        <h2>先有画面，再给一句话升级</h2>
+        <p>每段最多加工一句。词语必须能在刚才的观察中找到依据。</p>
+        <div class="word-groups">
+          <div class="word-group"><b>空间和样子</b><div class="chips"><span class="chip">开阔</span><span class="chip">高耸</span><span class="chip">层层展开</span><span class="chip">整齐排列</span><span class="chip">斑驳</span></div></div>
+          <div class="word-group"><b>动作和变化</b><div class="chips"><span class="chip">延伸</span><span class="chip">俯视</span><span class="chip">汇聚</span><span class="chip">倾泻</span><span class="chip">回荡</span></div></div>
+          <div class="word-group"><b>看完的感受</b><div class="chips"><span class="chip">威严</span><span class="chip">壮观</span><span class="chip">精巧</span><span class="chip">巧妙</span><span class="chip">神秘</span></div></div>
+        </div>
+        <label class="field">我想加工原来的哪句话？<textarea class="short" data-save="polishOriginal"></textarea></label>
+        <label class="field">这句话里，真实能看到或听到的依据是什么？<textarea class="short" data-save="polishEvidence"></textarea></label>
+        <label class="field">保留原意，换一种更清楚的说法<textarea data-save="polishNew"></textarea></label>
+        <label class="field">我为什么选择新说法？<textarea class="short" data-save="polishWhy"></textarea></label>
+        <details><summary>想用比喻时再打开</summary><div><p>先说清两样东西真正相同的地方：形状、动作、排列还是气势？说不出共同点就不用比喻，直接把真实细节说准。</p></div></details>
+        <div class="actions"><button class="secondary" type="button" data-back>上一步</button><button type="button" data-next>语言检查好了</button></div>
+      </section>
+
+      <section class="step" data-step="7">
+        <div class="step-label">第8步 · 拼成整篇</div>
+        <h2>系统只排列孩子已经说出的内容</h2>
+        <p>开头和结尾也先由孩子口述。家长只照原话记录，不补推荐理由。</p>
+        <label class="field">开头：我要推荐哪里？最想先让读者知道什么？<textarea class="short" data-save="intro" placeholder="家长照原话记录"></textarea></label>
+        <label class="field">结尾：听完前面的内容，我最想邀请读者做什么？<textarea class="short" data-save="ending" placeholder="家长照原话记录"></textarea></label>
+        <div class="actions"><button class="jade" type="button" id="buildDraft">整理我的口述</button><button class="secondary" type="button" id="copyDraft">复制整理稿</button></div>
+        <div class="draft" id="draftPreview"><div class="draft-title">请到故宫来</div><p class="empty">点击“整理我的口述”后，这里只按顺序放入已经记录的原话。</p></div>
+        <div class="instruction">家长逐段读给孩子听。孩子听到不是自己意思的地方，说“停”，由孩子重新口述。</div>
+        <label class="field">孩子主动修改的地方<textarea class="short" data-save="childCorrections"></textarea></label>
+        <div class="actions"><button class="secondary" type="button" data-back>上一步</button><button type="button" data-next>我确认是自己的意思</button></div>
+      </section>
+
+      <section class="step" data-step="8">
+        <div class="step-label">第9步 · 检查与回传</div>
+        <h2>先检查思想，再誊写</h2>
+        <div class="checks">
+          <label class="check"><input type="checkbox" data-save="check1"><span>地点和推荐对象一直是故宫。</span></label>
+          <label class="check"><input type="checkbox" data-save="check2"><span>中心是我自己确定的，每段第一句都在帮助说明中心。</span></label>
+          <label class="check"><input type="checkbox" data-save="check3"><span>每段至少有一个具体场景和两个能看见、听见或核实的细节。</span></label>
+          <label class="check"><input type="checkbox" data-save="check4"><span>我说明了这些材料为什么值得介绍，没有只列物件名称。</span></label>
+          <label class="check"><input type="checkbox" data-save="check5"><span>好词有真实依据；不确定的历史没有当作事实写。</span></label>
+          <label class="check"><input type="checkbox" data-save="check6"><span>家长记录的是我的意思，我已经改掉不符合原意的地方。</span></label>
+        </div>
+        <div class="parent-box"><h3>本次运行只记录事实</h3><label class="field">孩子独立完成了哪些步骤？<textarea class="short" data-save="independentSteps"></textarea></label><label class="field">哪些步骤需要提示？<textarea class="short" data-save="promptedSteps"></textarea></label><label class="field">成人提供过哪些词或完整意思？<textarea class="short" data-save="adultContribution"></textarea></label><label class="field">撤掉具体问题后，孩子还能按导图口述哪些内容？<textarea class="short" data-save="fadedResult"></textarea></label></div>
+        <div class="instruction">最后：按确认后的整理稿誊写到学校作文纸。拍摄导图、最终作文和本页家长记录，作为下一次撤架依据。</div>
+        <div class="actions"><button class="secondary" type="button" data-back>上一步</button><button class="jade" type="button" id="finishButton">本次陪伴学习完成</button></div>
+        <p class="notice">页面内容只保存在当前浏览器，不会自动上传。页面完成不代表已经能够独立写作。</p>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const storageKey='writing-forbidden-city-public-bridge-r05-2';
+    const steps=[...document.querySelectorAll('.step')];
+    const state=(()=>{try{return JSON.parse(localStorage.getItem(storageKey)||'{}')}catch{return {}}})();
+    let currentStep=Number.isInteger(state.currentStep)?state.currentStep:0;
+    const save=()=>localStorage.setItem(storageKey,JSON.stringify(state));
+    const valueOf=(key)=>state[key]||'';
+
+    document.querySelectorAll('[data-save]').forEach(el=>{
+      const key=el.dataset.save;
+      if(el.type==='checkbox') el.checked=Boolean(state[key]);
+      else if(state[key]!==undefined) el.value=state[key];
+      el.addEventListener('input',()=>{state[key]=el.type==='checkbox'?el.checked:el.value;save()});
+    });
+
+    const materialBoxes=[...document.querySelectorAll('[data-material]')];
+    materialBoxes.forEach(box=>{
+      box.checked=(state.materials||[]).includes(box.dataset.material);
+      box.addEventListener('change',()=>{
+        const selected=materialBoxes.filter(x=>x.checked);
+        if(selected.length>3){box.checked=false;alert('一次最多选择3项。先把最有感觉的留下。')}
+        state.materials=materialBoxes.filter(x=>x.checked).map(x=>x.dataset.material);save();renderMaterialCount();renderObservationSlots();
+      });
+    });
+    function selectedMaterials(){return state.materials||[]}
+    function renderMaterialCount(){document.getElementById('selectedCount').textContent=`已选${selectedMaterials().length}项，最多3项`}
+    function escapeHtml(s){return String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+    function bindDynamic(root){root.querySelectorAll('[data-dynamic]').forEach(el=>{const key=el.dataset.dynamic;if(state[key]!==undefined)el.value=state[key];el.addEventListener('input',()=>{state[key]=el.value;save()})})}
+    function renderObservationSlots(){
+      const root=document.getElementById('observationSlots');
+      const items=selectedMaterials();
+      root.innerHTML=items.length?items.map((name,i)=>`<article class="slot"><h3>素材${i+1}：${escapeHtml(name==='我自己的另一段记忆'?(valueOf('customMaterial')||name):name)}</h3><label class="field">我原来记得什么？<textarea class="short" data-dynamic="obs${i}Memory"></textarea></label><label class="field">我从画面、视频或现场又看见了什么？<textarea class="short" data-dynamic="obs${i}See"></textarea></label><label class="field">需要查证的事实是什么？查到后只记必要信息<textarea class="short" data-dynamic="obs${i}Fact"></textarea></label><label class="field">我想不想把它写进作文？为什么？<textarea class="short" data-dynamic="obs${i}Use"></textarea></label></article>`).join(''):'<p class="empty">请先回到上一页选择1至3项素材。</p>';
+      bindDynamic(root);
+    }
+    function renderBridgeGrid(){
+      const root=document.getElementById('bridgeGrid');
+      root.innerHTML=[1,2,3].map(n=>`<article class="bridge-card"><h3>正文第${n}段${n===3?'（可选）':''}</h3><label class="field">本段第一句<textarea class="short" data-dynamic="p${n}First"></textarea></label><label class="field">把读者带到哪个场景？<textarea class="short" data-dynamic="p${n}Scene"></textarea></label><label class="field">具体细节1<textarea class="short" data-dynamic="p${n}Detail1"></textarea></label><label class="field">具体细节2<textarea class="short" data-dynamic="p${n}Detail2"></textarea></label><label class="field">必要的知识、故事或作用<textarea class="short" data-dynamic="p${n}Fact"></textarea></label><label class="field">游客看完会多发现什么？<textarea class="short" data-dynamic="p${n}Gain"></textarea></label><label class="field">怎样回到“为什么值得来”？<textarea class="short" data-dynamic="p${n}Return"></textarea></label></article>`).join('');
+      bindDynamic(root);
+      [1,2,3].forEach(n=>{const from=document.querySelector(`[data-save="branch${n}First"]`);const to=root.querySelector(`[data-dynamic="p${n}First"]`);if(!valueOf(`p${n}First`)&&from.value){to.value=from.value;state[`p${n}First`]=from.value;save()}})
+    }
+    function showStep(index){
+      currentStep=Math.max(0,Math.min(index,steps.length-1));
+      steps.forEach((step,i)=>step.classList.toggle('active',i===currentStep));
+      document.getElementById('progressFill').style.width=`${((currentStep+1)/steps.length)*100}%`;
+      document.getElementById('progressText').textContent=`${currentStep+1} / ${steps.length}`;
+      state.currentStep=currentStep;save();
+      if(currentStep===3)renderObservationSlots();if(currentStep===5)renderBridgeGrid();
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+    document.querySelectorAll('[data-next]').forEach(b=>b.addEventListener('click',()=>showStep(currentStep+1)));
+    document.querySelectorAll('[data-back]').forEach(b=>b.addEventListener('click',()=>showStep(currentStep-1)));
+
+    function paragraph(n){return [`p${n}First`,`p${n}Scene`,`p${n}Detail1`,`p${n}Detail2`,`p${n}Fact`,`p${n}Gain`,`p${n}Return`].map(valueOf).filter(Boolean).join('\n')}
+    function buildDraft(){
+      const parts=[valueOf('intro')||document.querySelector('[data-save="intro"]').value,paragraph(1),paragraph(2),paragraph(3),valueOf('ending')||document.querySelector('[data-save="ending"]').value].filter(Boolean);
+      const root=document.getElementById('draftPreview');root.innerHTML='<div class="draft-title">请到故宫来</div>'+parts.map(p=>`<p>${escapeHtml(p)}</p>`).join('');state.draft=parts.join('\n\n');save();
+    }
+    document.getElementById('buildDraft').addEventListener('click',buildDraft);
+    document.getElementById('copyDraft').addEventListener('click',async()=>{buildDraft();try{await navigator.clipboard.writeText(state.draft||'');alert('整理稿已复制')}catch{alert('浏览器没有允许复制，请手动选择整理稿')}});
+    document.getElementById('finishButton').addEventListener('click',()=>{state.finished=true;save();document.getElementById('finishButton').textContent='已记录本次完成'});
+    if(state.finished)document.getElementById('finishButton').textContent='已记录本次完成';
+    renderMaterialCount();renderObservationSlots();renderBridgeGrid();showStep(currentStep);
+  </script>
+</body>
+</html>
