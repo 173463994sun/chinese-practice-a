@@ -92,6 +92,19 @@
       background: var(--blue-soft);
       font-size: 21px;
     }
+    .memory-bank { display: grid; gap: 10px; margin: 18px 0; }
+    .memory-card {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 10px;
+      align-items: start;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+    }
+    .memory-card input { width: 22px; height: 22px; margin: 3px 0 0; }
+    .memory-card b { color: var(--green); }
     .source { color: var(--muted); font-size: 14px; }
     .bridge { display: grid; gap: 8px; margin: 20px 0; }
     .bridge-item {
@@ -204,8 +217,8 @@
     <header>
       <div class="kicker">四年级上册 · 第一单元写作</div>
       <h1>把一个推荐理由说完整</h1>
-      <p class="lead">你已经写出了“请到故宫来”的开头和结尾。今天不重写它们，只补作文中间最重要的一段：故宫有什么、同学去了能得到什么、为什么值得去。</p>
-      <div class="goal">两个任务：先把故宫的一个理由独立说完整，再把自己的口述写成3至4句。</div>
+      <p class="lead">这次不重写“请到故宫来”的开头和结尾，只选一个可核实的故宫细节，把中间的推荐理由说完整。</p>
+      <div class="goal">两个任务：先独立选一个细节说完整，再把自己的口述写成3至4句。</div>
     </header>
 
     <div class="toolbar">
@@ -218,7 +231,7 @@
       <section class="step active" data-step="0">
         <div class="step-label">第1步 · 先让我自己试</div>
         <h2>不看后面的帮助，先说一次</h2>
-        <div class="instruction">请用“故宫的红墙黄瓦”，说出一个让同学愿意去故宫的理由。</div>
+        <div class="instruction">先不看材料库：说出一个你对故宫有印象的细节，再说说为什么值得同学亲自去看。</div>
         <p>家长现在只听、不追问、不补句子。孩子说完或自然停下，就进入下一步。</p>
         <div class="actions">
           <button type="button" data-next>我第一次说完了</button>
@@ -249,40 +262,48 @@
       </section>
 
       <section class="step" data-step="2">
-        <div class="step-label">第3步 · 回到故宫</div>
-        <h2>一次只回答一个问题</h2>
-        <div class="fact">
-          <b>今天只用这一条事实：</b><br>
-          故宫宫廷建筑主要使用红色和黄色：殿宇屋顶覆盖黄色琉璃瓦，墙体为红色。
+        <div class="step-label">第3步 · 整理自己的故宫材料</div>
+        <h2>只选一个细节，不把所有东西都塞进一段</h2>
+        <p>下面提供三个经过核对的故宫细节。只选一个今天最想讲清楚的。</p>
+        <div class="memory-bank" role="radiogroup" aria-label="选择一个故宫细节">
+          <label class="memory-card"><input type="radio" name="material"><span><b>太和殿和石雕龙头</b><br>太和殿是紫禁城内规模最大的殿宇；栏杆下有排水用的石雕龙头，下雨时会形成“千龙吐水”的景象。</span></label>
+          <label class="memory-card"><input type="radio" name="material"><span><b>宫里的水缸</b><br>故宫是大型木结构宫殿建筑群，宫内的铜缸过去要储水，用来防火。</span></label>
+          <label class="memory-card"><input type="radio" name="material"><span><b>太和门前的铜狮</b><br>太和门前有一对铜狮：雄狮脚踩绣球，雌狮脚下有一只幼狮。</span></label>
         </div>
-        <p class="source">事实依据：故宫博物院公开研究资料。今天只使用这一条建筑事实，不同时介绍很多宫殿。</p>
+        <p class="source">事实依据：故宫博物院“太和殿”“太和门”“故宫神兽”及宫廷历史公开资料。今天只选其中一个，不同时写多个。</p>
 
         <div class="one-question">
           <strong>问题1</strong>
-          同学走进故宫，能亲眼看到怎样的建筑色彩和画面？先口述。
+          你选的是哪个细节？它具体在哪里、是什么样或有什么作用？先用自己的话口述。
         </div>
         <div class="one-question">
           <strong>问题2</strong>
-          亲眼看到这样的宫殿建筑，会让他留下怎样的感受或认识？先口述。
+          同学亲眼看到这个细节，会看到怎样的画面，或发现什么有意思的地方？
         </div>
         <div class="one-question">
           <strong>问题3</strong>
-          所以，你为什么愿意把这里推荐给同学？
+          这个发现会给同学什么感受或认识？
+        </div>
+        <div class="one-question">
+          <strong>问题4</strong>
+          有了这样的感受或认识，为什么值得把故宫推荐给他？
         </div>
 
         <details>
           <summary>卡住时再打开：只给思考方向</summary>
           <div>
             <p>先找自己断在哪一个问题，只回答那一个。</p>
-            <p><b>如果问题2卡住：</b>你想说的是一种“感受”，还是一种“认识”？只选类别，具体内容仍由你自己说。</p>
-            <p><b>如果问题3卡住：</b>回听刚才的感受或认识。它能帮助同学决定“这个地方适不适合我”吗？</p>
+            <p><b>如果问题1卡住：</b>先只说位置、样子、动作或用途中的一个，不要求一次说全。</p>
+            <p><b>如果问题2卡住：</b>想象同学站在它面前，眼睛先会注意到什么。</p>
+            <p><b>如果问题3卡住：</b>你想说的是一种“感受”，还是一种“认识”？只选类别，具体内容仍由你自己说。</p>
+            <p><b>如果问题4卡住：</b>回听刚才的感受或认识，想想哪一类同学会想得到它。</p>
             <p class="support-note">这里不给故宫的感受答案，也不给完整推荐句。</p>
           </div>
         </details>
 
         <div class="actions">
           <button class="secondary" type="button" data-back>上一步</button>
-          <button type="button" data-next>三个问题都说过了</button>
+          <button type="button" data-next>四个问题都说过了</button>
         </div>
       </section>
 
@@ -329,8 +350,8 @@
         <div class="step-label">第6步 · 我自己的完成检查</div>
         <h2>不是检查漂不漂亮，只检查关系有没有说全</h2>
         <div class="check-list" id="childChecks">
-          <label class="check-row"><input type="checkbox" data-save="c1"><span>我只围绕红墙黄瓦这一件事，没有跑到很多别的内容。</span></label>
-          <label class="check-row"><input type="checkbox" data-save="c2"><span>我说出了同学走进故宫能看到什么。</span></label>
+          <label class="check-row"><input type="checkbox" data-save="c1"><span>我只选了一个故宫细节，没有把所有东西都塞进一段。</span></label>
+          <label class="check-row"><input type="checkbox" data-save="c2"><span>我说清楚了这个细节在哪里、是什么样或有什么作用。</span></label>
           <label class="check-row"><input type="checkbox" data-save="c3"><span>我说出了这段经历会带来什么感受或认识。</span></label>
           <label class="check-row"><input type="checkbox" data-save="c4"><span>我说清楚了为什么值得推荐。</span></label>
           <label class="check-row"><input type="checkbox" data-save="c5"><span>合上提示后，我还能重新说一遍。</span></label>
@@ -344,8 +365,9 @@
             <select id="firstStop" data-save-select>
               <option value="">请选择实际发生的一项</option>
               <option>没有听懂要说一个“完整理由”</option>
-              <option>只说出红墙黄瓦，没有说同学的经历</option>
-              <option>说出同学能看到什么，没有说感受或认识</option>
+              <option>说出很多故宫细节，但没有选定一个</option>
+              <option>选出一个细节，但没有说清位置、样子或作用</option>
+              <option>说清细节，但没有说同学会看到或发现什么</option>
               <option>说出感受或认识，没有形成推荐判断</option>
               <option>加入很多其他内容，不能收回一条主线</option>
               <option>第一次已经说完整</option>
@@ -382,16 +404,16 @@
           <button class="secondary" type="button" data-back>上一步</button>
           <button type="button" id="resetButton">清空本机记录</button>
         </div>
-        <p class="privacy">完成勾选和家长记录只保存在当前浏览器，不上传。页面完成不代表已经稳定掌握，下一次需要换故宫里的另一条事实并减少支架验证。</p>
+        <p class="privacy">完成勾选和家长记录只保存在当前浏览器，不上传。页面完成不代表已经稳定掌握，下一次再换故宫里的另一个细节并减少支架验证。</p>
       </section>
     </main>
 
     <section class="print-sheet">
       <h1>语文写作学习单</h1>
-      <p style="text-align:center">四年级上册第一单元｜故宫的一个推荐理由｜口述后仿写</p>
+      <p style="text-align:center">四年级上册第一单元｜故宫的一个细节｜口述后仿写</p>
       <h2>一、口述任务</h2>
-      <div class="fact"><b>事实：</b>故宫宫廷建筑主要使用红色和黄色：殿宇屋顶覆盖黄色琉璃瓦，墙体为红色。</div>
-      <p>先口述：这里具体有什么 → 同学到了那里能做什么 → 他会得到什么 → 为什么值得推荐。</p>
+      <div class="fact"><b>我选：</b>□ 太和殿和石雕龙头　□ 宫里的水缸　□ 太和门前的铜狮</div>
+      <p>先口述：这个细节是什么 → 同学会看到或发现什么 → 他会得到什么 → 为什么值得推荐。</p>
       <h2>二、仿写一个正文段</h2>
       <p>把自己撤掉提示后的口述写成3至4句。只写中间正文，不写开头和结尾。</p>
       <div class="writing-lines">
