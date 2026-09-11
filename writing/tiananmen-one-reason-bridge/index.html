@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>语文写作学习单｜把一个推荐理由说完整</title>
+  <style>
+    :root {
+      --ink: #182521;
+      --muted: #63706b;
+      --paper: #ffffff;
+      --canvas: #f4f6f3;
+      --line: #cad4ce;
+      --green: #21634d;
+      --green-soft: #e8f2ed;
+      --gold: #a76a13;
+      --gold-soft: #fff3d9;
+      --blue: #285f87;
+      --blue-soft: #eaf2f8;
+      --red: #9a453c;
+      --shadow: 0 10px 28px rgba(24, 37, 33, .08);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--canvas);
+      font: 18px/1.65 -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+    button, select { font: inherit; }
+    button { cursor: pointer; }
+    .page { width: min(900px, 100%); margin: 0 auto; background: var(--paper); min-height: 100vh; }
+    header { padding: 34px clamp(18px, 5vw, 54px) 26px; border-bottom: 1px solid var(--line); }
+    .kicker { color: var(--green); font-weight: 800; }
+    h1 { margin: 8px 0; font-size: clamp(30px, 6vw, 48px); line-height: 1.2; letter-spacing: 0; }
+    h2 { margin: 0 0 12px; font-size: clamp(25px, 4vw, 34px); line-height: 1.3; letter-spacing: 0; }
+    h3 { margin: 0 0 8px; font-size: 21px; letter-spacing: 0; }
+    p { margin: 8px 0; }
+    .lead { max-width: 700px; color: var(--muted); }
+    .goal {
+      margin-top: 20px;
+      padding: 14px 16px;
+      border-left: 5px solid var(--gold);
+      background: var(--gold-soft);
+      border-radius: 6px;
+      font-weight: 750;
+    }
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px clamp(18px, 5vw, 54px);
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, .96);
+      backdrop-filter: blur(10px);
+    }
+    .progress-track { flex: 1; height: 8px; overflow: hidden; background: #e1e7e3; border-radius: 4px; }
+    .progress-fill { width: 0; height: 100%; background: var(--green); transition: width .2s ease; }
+    .progress-text { min-width: 62px; color: var(--muted); font-size: 15px; font-weight: 800; }
+    .print-button {
+      min-height: 40px;
+      padding: 6px 12px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      color: var(--ink);
+      background: #fff;
+      font-weight: 750;
+    }
+    main { padding: 0 clamp(18px, 5vw, 54px) 70px; }
+    .step { display: none; padding: 34px 0; }
+    .step.active { display: block; }
+    .step-label { color: var(--blue); font-size: 15px; font-weight: 850; }
+    .instruction {
+      margin: 18px 0;
+      padding: 16px;
+      border: 2px solid var(--green);
+      border-radius: 6px;
+      background: var(--green-soft);
+      font-size: 21px;
+      font-weight: 800;
+    }
+    .fact {
+      margin: 18px 0;
+      padding: 18px;
+      border: 1px solid #b8cfe0;
+      border-radius: 6px;
+      background: var(--blue-soft);
+      font-size: 21px;
+    }
+    .source { color: var(--muted); font-size: 14px; }
+    .bridge { display: grid; gap: 8px; margin: 20px 0; }
+    .bridge-item {
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+    }
+    .bridge-item b { color: var(--green); }
+    .arrow { text-align: center; color: var(--gold); font-size: 24px; font-weight: 900; }
+    .one-question {
+      margin: 18px 0;
+      padding: 18px;
+      border-left: 5px solid var(--blue);
+      background: #f7fafc;
+      border-radius: 6px;
+    }
+    .one-question strong { display: block; margin-bottom: 6px; font-size: 22px; }
+    details {
+      margin: 14px 0;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+    }
+    summary { padding: 13px 15px; color: var(--blue); font-weight: 800; cursor: pointer; }
+    details > div { padding: 0 15px 15px; }
+    .support-note { color: var(--muted); font-size: 15px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+    .actions button {
+      min-height: 50px;
+      padding: 10px 18px;
+      border: 0;
+      border-radius: 6px;
+      background: var(--green);
+      color: #fff;
+      font-weight: 850;
+    }
+    .actions button.secondary { border: 2px solid var(--green); color: var(--green); background: #fff; }
+    .actions button:disabled { opacity: .45; cursor: default; }
+    .check-list { display: grid; gap: 10px; margin: 20px 0; }
+    .check-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+    }
+    .check-row input { width: 24px; height: 24px; flex: 0 0 auto; margin-top: 2px; }
+    .model {
+      margin: 18px 0;
+      padding: 18px;
+      border: 1px solid #e2c98f;
+      border-radius: 6px;
+      background: #fffaf0;
+    }
+    .model .tag { color: var(--gold); font-weight: 850; }
+    .writing-lines { margin: 18px 0; }
+    .writing-line { height: 42px; border-bottom: 1px solid #7f8b85; }
+    .adult-record { margin-top: 30px; }
+    .adult-record select {
+      width: 100%;
+      margin: 8px 0 16px;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+    }
+    .done-box { padding: 20px; border: 2px solid var(--green); border-radius: 6px; background: var(--green-soft); }
+    .privacy { margin-top: 24px; color: var(--muted); font-size: 14px; }
+    .retell-mode {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 20;
+      place-items: center;
+      padding: 22px;
+      background: #f4f6f3;
+    }
+    .retell-mode.open { display: grid; }
+    .retell-inner { width: min(680px, 100%); text-align: center; }
+    .retell-inner h2 { font-size: clamp(32px, 7vw, 54px); }
+    .retell-inner p { color: var(--muted); font-size: 20px; }
+    .retell-inner button { margin-top: 26px; min-height: 52px; padding: 10px 20px; border: 0; border-radius: 6px; color: #fff; background: var(--green); font-weight: 850; }
+    .print-sheet { display: none; }
+
+    @media (max-width: 620px) {
+      body { font-size: 17px; }
+      header { padding-top: 26px; }
+      .toolbar { gap: 8px; }
+      .print-button { padding: 6px 9px; }
+      .actions button { width: 100%; }
+    }
+
+    @media print {
+      @page { size: A4; margin: 14mm; }
+      body { background: #fff; font-size: 13pt; }
+      .page > header, .toolbar, main, .retell-mode { display: none !important; }
+      .print-sheet { display: block; padding: 0; }
+      .print-sheet h1 { font-size: 22pt; text-align: center; }
+      .print-sheet h2 { margin-top: 18px; font-size: 16pt; }
+      .print-sheet .fact { font-size: 13pt; background: #fff; }
+      .print-sheet .writing-line { height: 13mm; }
+      .print-sheet .check-row { padding: 8px; break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="kicker">四年级上册 · 第一单元写作</div>
+      <h1>把一个推荐理由说完整</h1>
+      <p class="lead">今天不重写开头和结尾，只练作文中间最重要的一段：让同学听明白，这里有什么、去了能得到什么、为什么值得去。</p>
+      <div class="goal">两个任务：先独立说完整，再仿照“关系”写成3至4句。</div>
+    </header>
+
+    <div class="toolbar">
+      <div class="progress-track" aria-label="学习进度"><div class="progress-fill" id="progressFill"></div></div>
+      <div class="progress-text" id="progressText">1 / 6</div>
+      <button class="print-button" id="printButton" type="button">打印落笔页</button>
+    </div>
+
+    <main>
+      <section class="step active" data-step="0">
+        <div class="step-label">第1步 · 先让我自己试</div>
+        <h2>不看后面的帮助，先说一次</h2>
+        <div class="instruction">请用“天安门广场的升旗仪式”，说出一个让同学愿意去的理由。</div>
+        <p>家长现在只听、不追问、不补句子。孩子说完或自然停下，就进入下一步。</p>
+        <div class="actions">
+          <button type="button" data-next>我第一次说完了</button>
+        </div>
+      </section>
+
+      <section class="step" data-step="1">
+        <div class="step-label">第2步 · 看一座完整的桥</div>
+        <h2>先看另一个地方是怎样说清楚的</h2>
+        <div class="model">
+          <div class="tag">教学示例：社区图书馆</div>
+          <p>社区图书馆里有儿童阅览区，图书按主题摆放。到了那里，我可以很快找到自己想读的书。这样，我能读到感兴趣的新知识，所以我愿意把它推荐给喜欢阅读的同学。</p>
+        </div>
+        <p>用手指着下面四步读一遍。现在只看每一句在做什么，不背示例。</p>
+        <div class="bridge" aria-label="推荐理由关系桥">
+          <div class="bridge-item"><b>1. 一个真事实</b><br>这个地方具体有什么？</div>
+          <div class="arrow">↓</div>
+          <div class="bridge-item"><b>2. 到那里能做什么</b><br>去的人能看到、听到、做到或了解到什么？</div>
+          <div class="arrow">↓</div>
+          <div class="bridge-item"><b>3. 他会得到什么</b><br>这段经历给他什么感受或认识？</div>
+          <div class="arrow">↓</div>
+          <div class="bridge-item"><b>4. 作出推荐判断</b><br>因此，为什么值得去？适合谁去？</div>
+        </div>
+        <div class="actions">
+          <button class="secondary" type="button" data-back>上一步</button>
+          <button type="button" data-next>我看懂这四步了</button>
+        </div>
+      </section>
+
+      <section class="step" data-step="2">
+        <div class="step-label">第3步 · 回到天安门广场</div>
+        <h2>一次只回答一个问题</h2>
+        <div class="fact">
+          <b>今天只用这一条事实：</b><br>
+          天安门广场每天举行升旗仪式，仪式中会奏唱国歌。
+        </div>
+        <p class="source">事实依据：北京市公开升降旗服务信息及既有核验资料。具体升旗时间每天不同，今天不写时间。</p>
+
+        <div class="one-question">
+          <strong>问题1</strong>
+          同学到了那里，能亲眼看到或亲耳听到什么？先口述。
+        </div>
+        <div class="one-question">
+          <strong>问题2</strong>
+          这段亲眼看到、亲耳听到的经历，会让他留下怎样的感受或认识？先口述。
+        </div>
+        <div class="one-question">
+          <strong>问题3</strong>
+          所以，你为什么愿意把这里推荐给同学？
+        </div>
+
+        <details>
+          <summary>卡住时再打开：只给思考方向</summary>
+          <div>
+            <p>先找自己断在哪一个问题，只回答那一个。</p>
+            <p><b>如果问题2卡住：</b>你想说的是一种“感受”，还是一种“认识”？只选类别，具体内容仍由你自己说。</p>
+            <p><b>如果问题3卡住：</b>回听刚才的感受或认识。它能帮助同学决定“这个地方适不适合我”吗？</p>
+            <p class="support-note">这里不给天安门的情感答案，也不给完整推荐句。</p>
+          </div>
+        </details>
+
+        <div class="actions">
+          <button class="secondary" type="button" data-back>上一步</button>
+          <button type="button" data-next>三个问题都说过了</button>
+        </div>
+      </section>
+
+      <section class="step" data-step="3">
+        <div class="step-label">第4步 · 连成一段，再撤掉帮助</div>
+        <h2>先连起来，然后不看提示重说</h2>
+        <p>第一次可以看四个空动作，把刚才的内容连起来：</p>
+        <div class="bridge">
+          <div class="bridge-item">这里具体有……</div>
+          <div class="bridge-item">同学到了那里能……</div>
+          <div class="bridge-item">这会让他……</div>
+          <div class="bridge-item">所以我推荐……</div>
+        </div>
+        <div class="instruction">说通以后，点击“不看提示再说”。屏幕会把事实卡、示例和句架全部藏起来。</div>
+        <div class="actions">
+          <button class="secondary" type="button" data-back>上一步</button>
+          <button type="button" id="openRetell">不看提示再说</button>
+          <button type="button" data-next>我已经独立重说</button>
+        </div>
+      </section>
+
+      <section class="step" data-step="4">
+        <div class="step-label">第5步 · 把口述变成仿写</div>
+        <h2>仿的是关系，不是示例里的词</h2>
+        <div class="model">
+          <div class="tag">回看示例的关系</div>
+          <p><b>具体事实</b> → <b>去的人能做什么</b> → <b>得到什么</b> → <b>所以值得推荐</b></p>
+        </div>
+        <div class="instruction">现在把刚才独立口述的内容，写成3至4句正文。不要重写作文开头和结尾。</div>
+        <p>写在作文纸或打印页上。可以回忆自己的口述，但不能照抄“社区图书馆”的内容。</p>
+        <div class="writing-lines" aria-label="仿写区">
+          <div class="writing-line"></div>
+          <div class="writing-line"></div>
+          <div class="writing-line"></div>
+          <div class="writing-line"></div>
+        </div>
+        <div class="actions">
+          <button class="secondary" type="button" data-back>上一步</button>
+          <button type="button" data-next>我写完这一个正文段了</button>
+        </div>
+      </section>
+
+      <section class="step" data-step="5">
+        <div class="step-label">第6步 · 我自己的完成检查</div>
+        <h2>不是检查漂不漂亮，只检查关系有没有说全</h2>
+        <div class="check-list" id="childChecks">
+          <label class="check-row"><input type="checkbox" data-save="c1"><span>我只围绕升旗这一件事，没有跑到很多别的内容。</span></label>
+          <label class="check-row"><input type="checkbox" data-save="c2"><span>我说出了同学到了那里能看到或听到什么。</span></label>
+          <label class="check-row"><input type="checkbox" data-save="c3"><span>我说出了这段经历会带来什么感受或认识。</span></label>
+          <label class="check-row"><input type="checkbox" data-save="c4"><span>我说清楚了为什么值得推荐。</span></label>
+          <label class="check-row"><input type="checkbox" data-save="c5"><span>合上提示后，我还能重新说一遍。</span></label>
+          <label class="check-row"><input type="checkbox" data-save="c6"><span>我写下来的3至4句，还是我刚才口述的意思。</span></label>
+        </div>
+
+        <details class="adult-record">
+          <summary>家长记录：孩子完成后再打开</summary>
+          <div>
+            <label for="firstStop"><b>第一次独立说，最早停在哪里？</b></label>
+            <select id="firstStop" data-save-select>
+              <option value="">请选择实际发生的一项</option>
+              <option>没有听懂要说一个“完整理由”</option>
+              <option>只说出升旗事实，没有说同学的经历</option>
+              <option>说出同学能看到或听到什么，没有说感受或认识</option>
+              <option>说出感受或认识，没有形成推荐判断</option>
+              <option>加入很多其他内容，不能收回一条主线</option>
+              <option>第一次已经说完整</option>
+            </select>
+
+            <label for="supportLevel"><b>做到独立重说前，实际用了哪一级帮助？</b></label>
+            <select id="supportLevel" data-save-select>
+              <option value="">请选择实际发生的一项</option>
+              <option>H0：没有帮助</option>
+              <option>H1：只重新说了一遍任务</option>
+              <option>H3：打开了“感受/认识”思考类别</option>
+              <option>H4：看了四个空动作句架</option>
+              <option>H6：需要成人另举一个例子</option>
+              <option>还不能独立重说，今天停止</option>
+            </select>
+
+            <label for="writingResult"><b>口述到书面发生了什么？</b></label>
+            <select id="writingResult" data-save-select>
+              <option value="">请选择实际发生的一项</option>
+              <option>能按自己的口述写成3至4句</option>
+              <option>口述完整，但写时漏掉其中一步</option>
+              <option>写时变成了另一套意思</option>
+              <option>书写负担过大，今天没有完成</option>
+            </select>
+            <p class="support-note">这些记录只说明本次在哪一步需要帮助，不直接给孩子贴“不会写”的标签。</p>
+          </div>
+        </details>
+
+        <div class="done-box">
+          <h3 id="doneTitle">完成状态：还在进行</h3>
+          <p id="doneText">六项检查全部勾选后，才算完成今天这一小段。没有完成也可以停在真实位置。</p>
+        </div>
+        <div class="actions">
+          <button class="secondary" type="button" data-back>上一步</button>
+          <button type="button" id="resetButton">清空本机记录</button>
+        </div>
+        <p class="privacy">完成勾选和家长记录只保存在当前浏览器，不上传。页面完成不代表已经稳定掌握，下一次需要换一个地点并减少支架验证。</p>
+      </section>
+    </main>
+
+    <section class="print-sheet">
+      <h1>语文写作学习单</h1>
+      <p style="text-align:center">四年级上册第一单元｜一个推荐理由｜口述后仿写</p>
+      <h2>一、口述任务</h2>
+      <div class="fact"><b>事实：</b>天安门广场每天举行升旗仪式，仪式中会奏唱国歌。</div>
+      <p>先口述：这里具体有什么 → 同学到了那里能做什么 → 他会得到什么 → 为什么值得推荐。</p>
+      <h2>二、仿写一个正文段</h2>
+      <p>把自己撤掉提示后的口述写成3至4句。只写中间正文，不写开头和结尾。</p>
+      <div class="writing-lines">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
+      </div>
+      <h2>三、孩子完成检查</h2>
+      <div class="check-list">
+        <div class="check-row">□ 我只围绕一件事。</div>
+        <div class="check-row">□ 我写出同学到了那里能看到、听到或做到什么。</div>
+        <div class="check-row">□ 我写出这段经历会带来什么。</div>
+        <div class="check-row">□ 我说清楚为什么值得推荐。</div>
+        <div class="check-row">□ 这段文字还是我自己口述的意思。</div>
+      </div>
+    </section>
+  </div>
+
+  <div class="retell-mode" id="retellMode" role="dialog" aria-modal="true" aria-labelledby="retellTitle">
+    <div class="retell-inner">
+      <div class="kicker">提示已经全部藏起来</div>
+      <h2 id="retellTitle">现在独立说出一个完整的推荐理由</h2>
+      <p>不用凑时间。说完整以后，请听的人只复述：“我听到你推荐它，是因为……”</p>
+      <button type="button" id="closeRetell">我独立说完了</button>
+    </div>
+  </div>
+
+  <script>
+    const KEY = 'chinese-writing:u1:tiananmen-one-reason:r02:public';
+    const steps = [...document.querySelectorAll('.step')];
+    const fill = document.getElementById('progressFill');
+    const progressText = document.getElementById('progressText');
+    const retell = document.getElementById('retellMode');
+    let state = {};
+    try { state = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (_) { state = {}; }
+    let current = Math.min(Number.isInteger(state.step) ? state.step : 0, steps.length - 1);
+
+    function save() {
+      state.step = current;
+      state.updatedAt = new Date().toISOString();
+      localStorage.setItem(KEY, JSON.stringify(state));
+    }
+
+    function show(index) {
+      current = Math.max(0, Math.min(index, steps.length - 1));
+      steps.forEach((step, i) => step.classList.toggle('active', i === current));
+      fill.style.width = `${((current + 1) / steps.length) * 100}%`;
+      progressText.textContent = `${current + 1} / ${steps.length}`;
+      save();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    document.querySelectorAll('[data-next]').forEach(button => button.addEventListener('click', () => show(current + 1)));
+    document.querySelectorAll('[data-back]').forEach(button => button.addEventListener('click', () => show(current - 1)));
+    document.getElementById('printButton').addEventListener('click', () => window.print());
+    document.getElementById('openRetell').addEventListener('click', () => retell.classList.add('open'));
+    document.getElementById('closeRetell').addEventListener('click', () => {
+      state.retellCompleted = true;
+      save();
+      retell.classList.remove('open');
+    });
+
+    const checks = [...document.querySelectorAll('[data-save]')];
+    const selects = [...document.querySelectorAll('[data-save-select]')];
+    checks.forEach(input => {
+      input.checked = Boolean(state[input.dataset.save]);
+      input.addEventListener('change', () => {
+        state[input.dataset.save] = input.checked;
+        save();
+        updateDone();
+      });
+    });
+    selects.forEach(select => {
+      select.value = state[select.id] || '';
+      select.addEventListener('change', () => {
+        state[select.id] = select.value;
+        save();
+      });
+    });
+
+    function updateDone() {
+      const complete = checks.length > 0 && checks.every(input => input.checked);
+      document.getElementById('doneTitle').textContent = complete ? '完成状态：今天这一段已完成' : '完成状态：还在进行';
+      document.getElementById('doneText').textContent = complete
+        ? '你完成了“先说完整、撤掉提示、再仿写”的全过程。'
+        : '没有完成也可以停在真实位置，家长只记录最早停下的那一步。';
+      state.completed = complete;
+      save();
+    }
+
+    document.getElementById('resetButton').addEventListener('click', () => {
+      if (!window.confirm('只清空这张学习单在当前浏览器中的勾选和记录，是否继续？')) return;
+      localStorage.removeItem(KEY);
+      state = {};
+      checks.forEach(input => { input.checked = false; });
+      selects.forEach(select => { select.value = ''; });
+      current = 0;
+      updateDone();
+      show(0);
+    });
+
+    updateDone();
+    show(current);
+  </script>
+</body>
+</html>
+
