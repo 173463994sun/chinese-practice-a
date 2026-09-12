@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="语文阅读小练：同篇修动作，新篇验能力。">
+  <title>语文阅读小练｜插句动作修复与撤架</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #172126;
+      --muted: #647078;
+      --paper: #fff;
+      --page: #edf1f2;
+      --line: #d4dade;
+      --navy: #173d52;
+      --green: #26705a;
+      --green-soft: #edf6f1;
+      --amber: #9a5b16;
+      --amber-soft: #fff6e8;
+      --blue-soft: #edf4f7;
+      --focus: #0b72b5;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+      font-size: 18px;
+      line-height: 1.75;
+      letter-spacing: 0;
+    }
+    button, input { font: inherit; }
+    button:focus-visible, summary:focus-visible, input:focus-visible {
+      outline: 3px solid rgba(11, 114, 181, .28);
+      outline-offset: 3px;
+    }
+    .shell {
+      width: min(880px, 100%);
+      min-height: 100vh;
+      margin: 0 auto;
+      background: var(--paper);
+      border-inline: 1px solid #dce1e3;
+    }
+    header {
+      padding: 24px clamp(18px, 5vw, 48px) 20px;
+      border-bottom: 1px solid var(--line);
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { margin-bottom: 5px; font-size: 1.85rem; line-height: 1.35; letter-spacing: 0; }
+    h2 { margin-bottom: 8px; font-size: 1.38rem; line-height: 1.4; letter-spacing: 0; }
+    h3 { margin-bottom: 8px; font-size: 1.08rem; line-height: 1.55; letter-spacing: 0; }
+    .meta, .quiet { color: var(--muted); }
+    .meta { margin: 0; font-size: .92rem; }
+    .route {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      padding: 16px clamp(18px, 5vw, 48px);
+      border-bottom: 1px solid var(--line);
+      background: #f8fafb;
+    }
+    .route-item {
+      min-height: 64px;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+      color: var(--muted);
+    }
+    .route-item strong { display: block; color: var(--navy); }
+    .route-item.current { border-color: var(--green); background: var(--green-soft); }
+    main { padding: 28px clamp(18px, 5vw, 48px) 56px; }
+    .panel[hidden] { display: none; }
+    .notice {
+      margin-bottom: 20px;
+      padding: 12px 15px;
+      border-left: 4px solid var(--green);
+      background: var(--green-soft);
+    }
+    .sentence {
+      margin: 14px 0;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+    }
+    .blank {
+      display: inline-block;
+      min-width: 5.5em;
+      margin: 0 .2em;
+      border-bottom: 2px solid var(--navy);
+      text-align: center;
+    }
+    .candidates {
+      display: grid;
+      gap: 10px;
+      margin: 18px 0;
+    }
+    .candidate { padding: 12px 14px; border-radius: 6px; background: var(--blue-soft); }
+    .answer-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 18px 0;
+    }
+    label.choice {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 54px;
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    label.choice:has(input:checked) { border-color: var(--green); background: var(--green-soft); }
+    input[type="radio"] { width: 22px; height: 22px; accent-color: var(--green); }
+    details {
+      margin: 14px 0;
+      border: 1px solid #e5c795;
+      border-radius: 6px;
+      background: var(--amber-soft);
+    }
+    summary { padding: 12px 14px; color: #75430e; font-weight: 750; cursor: pointer; }
+    .help { padding: 0 14px 14px; }
+    .help p:last-child { margin-bottom: 0; }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+    .btn {
+      min-height: 48px;
+      padding: 10px 17px;
+      border: 1px solid var(--navy);
+      border-radius: 6px;
+      background: var(--navy);
+      color: #fff;
+      font-weight: 750;
+      cursor: pointer;
+    }
+    .btn.secondary { background: #fff; color: var(--navy); }
+    .btn.done { border-color: var(--green); background: var(--green); }
+    .status {
+      min-height: 30px;
+      margin-top: 13px;
+      color: var(--green);
+      font-weight: 700;
+    }
+    .story {
+      margin: 18px 0;
+      padding: 16px 18px;
+      border-top: 2px solid var(--navy);
+      border-bottom: 1px solid var(--line);
+      background: #fbfcfc;
+    }
+    .options { display: grid; gap: 10px; margin: 18px 0; }
+    .finish {
+      padding: 24px;
+      border: 1px solid var(--green);
+      border-radius: 6px;
+      background: var(--green-soft);
+      text-align: center;
+    }
+    .finish p:last-child { margin-bottom: 0; }
+    footer {
+      padding: 18px clamp(18px, 5vw, 48px) 28px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .82rem;
+    }
+    @media (max-width: 620px) {
+      body { font-size: 17px; }
+      .route, .answer-row { grid-template-columns: 1fr; }
+      h1 { font-size: 1.55rem; }
+      .route-item { min-height: 0; }
+    }
+    @media print {
+      body { background: #fff; }
+      .shell { width: 100%; border: 0; }
+      .route, .actions, details, footer { display: none !important; }
+      .panel[hidden] { display: block; page-break-before: always; }
+      .panel:first-child { page-break-before: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <h1>语文阅读小练</h1>
+      <p class="meta">第一单元专项｜同篇修动作，新篇验能力｜约 8 分钟</p>
+    </header>
+
+    <div class="route" aria-label="练习进度">
+      <div class="route-item current" id="route1"><strong>1 回到原题</strong>把方法做清楚</div>
+      <div class="route-item" id="route2"><strong>2 换一题</strong>自己完成一次</div>
+    </div>
+
+    <main>
+      <section class="panel" id="panel1">
+        <h2>第一步：只看两个空格</h2>
+        <div class="notice">这次不重读整篇。先把候选句分别放回完整句子，再读一遍。</div>
+
+        <div class="candidates" aria-label="候选句">
+          <div class="candidate"><strong>A</strong>　像赛车在大道上疾驰</div>
+          <div class="candidate"><strong>B</strong>　像一个顽皮的孩子</div>
+        </div>
+
+        <p class="sentence"><strong>（1）</strong>凉丝丝的水花<span class="blank">　</span>，落到水面时还在蹦跳着，像在欢呼，似在嬉戏。</p>
+        <p class="sentence"><strong>（2）</strong>雨水夹杂着瀑布的水花<span class="blank">　</span>。</p>
+
+        <h3>先口述，再选择</h3>
+        <p class="quiet">每个空格只说两件事：前面写谁？放回哪一句后，整句最连贯？</p>
+        <div class="answer-row">
+          <div>
+            <strong>（1）我选</strong>
+            <label class="choice"><input type="radio" name="same1" value="A">A</label>
+            <label class="choice"><input type="radio" name="same1" value="B">B</label>
+          </div>
+          <div>
+            <strong>（2）我选</strong>
+            <label class="choice"><input type="radio" name="same2" value="A">A</label>
+            <label class="choice"><input type="radio" name="same2" value="B">B</label>
+          </div>
+        </div>
+
+        <details id="sameHelp">
+          <summary>卡住时再打开：只看方法</summary>
+          <div class="help">
+            <p>1. 指着一个空格，读完它所在的整句。</p>
+            <p>2. 把A放进去读一次，再把B放进去读一次。</p>
+            <p>3. 选好后，再读整句检查前后是不是在说同一个对象、同一种动作。</p>
+          </div>
+        </details>
+
+        <div class="actions">
+          <button class="btn" type="button" id="finishSame">完成回题，进入新题</button>
+        </div>
+        <p class="status" id="sameStatus" aria-live="polite"></p>
+      </section>
+
+      <section class="panel" id="panel2" hidden>
+        <h2>第二步：新材料独立作答</h2>
+        <div class="notice">先不打开提示。读完插入句和故事，自己选一个位置，并口述一句理由。</div>
+
+        <div class="story">
+          <p><strong>要插入的句子：</strong>于是它使劲往上跳，想够到葡萄。</p>
+          <p>①狐狸看到葡萄，馋得直流口水。</p>
+          <p>②它心想一定要吃到。</p>
+          <p>③可是架子太高，它试了几次，一颗也没吃到。</p>
+          <p>④它喘着气说葡萄肯定是酸的。</p>
+        </div>
+
+        <h3>N1　最恰当的位置是</h3>
+        <div class="options">
+          <label class="choice"><input type="radio" name="new1" value="A">A　①②之间</label>
+          <label class="choice"><input type="radio" name="new1" value="B">B　②③之间</label>
+          <label class="choice"><input type="radio" name="new1" value="C">C　③④之间</label>
+          <label class="choice"><input type="radio" name="new1" value="D">D　④之后</label>
+        </div>
+        <p><strong>口述理由：</strong>“我放在这里，因为前面________，插入句________，后面________。”</p>
+
+        <details id="newHelp">
+          <summary>第一次想不出来，再打开方法</summary>
+          <div class="help">
+            <p>不要找相同的词。检查三件事：前面发生了什么？插入句做了什么？后面出现了什么结果？</p>
+            <p>把句子放进去，从前一句开始连读到后一句。</p>
+          </div>
+        </details>
+
+        <div class="actions">
+          <button class="btn done" type="button" id="finishNew">我已选择并说出理由</button>
+          <button class="btn secondary" type="button" id="back">返回上一题</button>
+        </div>
+        <p class="status" id="newStatus" aria-live="polite"></p>
+      </section>
+
+      <section class="panel" id="panel3" hidden>
+        <div class="finish">
+          <h2>本次小练完成</h2>
+          <p>请告诉家长：新题是独立完成，还是打开方法后完成。</p>
+          <p class="quiet">页面只记录作答过程，不显示答案。拍照或录音反馈后再核对。</p>
+        </div>
+        <div class="actions">
+          <button class="btn secondary" type="button" id="review">回看新题</button>
+        </div>
+      </section>
+    </main>
+
+    <footer>题源说明：第一题为已做原题的定向回题；第二题为知识库已核验教辅原题。参考答案不进入孩子页面。</footer>
+  </div>
+
+  <script>
+    (() => {
+      const key = 'cky-chinese-reading-slot-bridge-20260912-v1';
+      const state = JSON.parse(localStorage.getItem(key) || '{}');
+      const panels = [1, 2, 3].map(n => document.getElementById(`panel${n}`));
+      const routes = [document.getElementById('route1'), document.getElementById('route2')];
+
+      function save() {
+        localStorage.setItem(key, JSON.stringify(state));
+      }
+      function show(n) {
+        panels.forEach((panel, i) => { panel.hidden = i !== n - 1; });
+        routes.forEach((item, i) => item.classList.toggle('current', n === i + 1));
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+      function selected(name) {
+        return document.querySelector(`input[name="${name}"]:checked`)?.value || '';
+      }
+      function restore(name, value) {
+        if (!value) return;
+        const input = document.querySelector(`input[name="${name}"][value="${value}"]`);
+        if (input) input.checked = true;
+      }
+
+      ['same1', 'same2', 'new1'].forEach(name => {
+        document.querySelectorAll(`input[name="${name}"]`).forEach(input => {
+          input.addEventListener('change', () => { state[name] = input.value; save(); });
+        });
+        restore(name, state[name]);
+      });
+
+      document.getElementById('sameHelp').addEventListener('toggle', event => {
+        if (event.target.open) { state.sameHelpOpened = true; save(); }
+      });
+      document.getElementById('newHelp').addEventListener('toggle', event => {
+        if (event.target.open) { state.newHelpOpened = true; save(); }
+      });
+
+      document.getElementById('finishSame').addEventListener('click', () => {
+        if (!selected('same1') || !selected('same2')) {
+          document.getElementById('sameStatus').textContent = '两个空格都选好，再进入新题。';
+          return;
+        }
+        state.sameCompleted = true;
+        state.same1 = selected('same1');
+        state.same2 = selected('same2');
+        save();
+        show(2);
+      });
+
+      document.getElementById('finishNew').addEventListener('click', () => {
+        if (!selected('new1')) {
+          document.getElementById('newStatus').textContent = '先选择一个位置，再口述理由。';
+          return;
+        }
+        state.new1 = selected('new1');
+        state.newCompleted = true;
+        save();
+        show(3);
+      });
+
+      document.getElementById('back').addEventListener('click', () => show(1));
+      document.getElementById('review').addEventListener('click', () => show(2));
+      show(state.newCompleted ? 3 : state.sameCompleted ? 2 : 1);
+    })();
+  </script>
+</body>
+</html>
