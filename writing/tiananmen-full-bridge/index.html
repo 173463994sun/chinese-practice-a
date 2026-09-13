@@ -3,266 +3,219 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="description" content="四年级上册第一单元《推荐一个好地方》天安门广场周作文第二稿学习单。">
-  <title>语文写作学习单｜天安门广场第二稿</title>
+  <meta name="description" content="四年级上册第一单元《推荐一个好地方》天安门广场作文逐段修改学习单。">
+  <title>语文写作学习单｜天安门广场逐段修改</title>
   <style>
-    :root {
-      --ink:#17201d; --muted:#5d6762; --paper:#fff; --canvas:#edf0ee;
-      --red:#9b2f2b; --red-soft:#f8ecea; --green:#245d49; --green-soft:#eaf3ee;
-      --gold:#8d631e; --gold-soft:#fbf3df; --blue:#2d5f7a; --blue-soft:#edf4f7;
-      --line:#cbd2ce; --focus:#006f9f;
+    :root{
+      --ink:#1b211f;--muted:#5b6560;--paper:#fff;--canvas:#eef1ef;--line:#cbd2ce;
+      --red:#8f2e2a;--red-soft:#f8eeec;--green:#285d49;--green-soft:#edf5f0;
+      --blue:#315f78;--blue-soft:#eef4f7;--gold:#806120;--gold-soft:#faf4e5;--focus:#006d9c
     }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}
     body{margin:0;background:var(--canvas);color:var(--ink);font:18px/1.65 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
-    button,textarea,input{font:inherit}
-    button{cursor:pointer}
-    button:focus-visible,textarea:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
-    .app{width:min(920px,100%);min-height:100vh;margin:auto;background:var(--paper)}
-    .hero{position:relative;height:270px;overflow:hidden;background:#333}
-    .hero img{width:100%;height:100%;object-fit:cover;filter:brightness(.62)}
-    .hero-copy{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:30px clamp(20px,6vw,56px);color:#fff;background:linear-gradient(180deg,transparent 18%,rgba(0,0,0,.72))}
-    .kicker{font-size:15px;font-weight:800}
-    h1{margin:6px 0 4px;font-size:clamp(34px,7vw,54px);line-height:1.08;letter-spacing:0}
-    .hero p{margin:5px 0 0;max-width:720px}
-    .toolbar{position:sticky;top:0;z-index:20;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:12px clamp(16px,5vw,46px);border-bottom:1px solid var(--line);background:rgba(255,255,255,.97);backdrop-filter:blur(10px)}
-    .track{height:9px;border-radius:5px;background:#e1e5e3;overflow:hidden}.fill{height:100%;width:16.66%;background:var(--red);transition:width .2s}.progress{color:var(--muted);font-size:14px;font-weight:800}
-    .quickbar{display:flex;gap:8px;padding:12px clamp(20px,6vw,56px);border-bottom:1px solid var(--line);overflow:auto;background:#fafbfa}
-    .quickbar button,.icon-btn{white-space:nowrap;min-height:42px;padding:7px 12px;border:1px solid var(--line);border-radius:6px;background:#fff;color:var(--ink);font-weight:750}
-    main{padding:0 clamp(20px,6vw,56px) 70px}
-    .step{display:none;padding:34px 0}.step.active{display:block}
-    .step-mark{color:var(--red);font-size:15px;font-weight:850}
-    h2{margin:6px 0 10px;font-size:clamp(28px,5vw,38px);line-height:1.22;letter-spacing:0}h3{margin:22px 0 8px;font-size:22px;letter-spacing:0}
-    p{margin:8px 0}.lead{max-width:730px;color:var(--muted)}
-    .task{margin:20px 0;padding:17px 19px;border-left:5px solid var(--red);background:var(--red-soft);font-size:21px;font-weight:800}
-    .teacher-lines{display:grid;gap:0;margin:22px 0;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
-    .teacher-lines div{display:grid;grid-template-columns:42px 1fr;gap:10px;padding:13px 4px;border-bottom:1px solid var(--line)}.teacher-lines div:last-child{border-bottom:0}.teacher-lines b{color:var(--red)}
-    .center-line{margin:22px 0;padding:20px;border:2px solid var(--green);background:var(--green-soft);font-size:21px}.center-line strong{display:block;color:var(--green);font-size:15px}
-    .viewpoints{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0}.viewpoint{padding:18px;border-top:5px solid var(--blue);background:var(--blue-soft)}.viewpoint:nth-child(2){border-color:var(--gold);background:var(--gold-soft)}.viewpoint h3{margin:0 0 6px;font-size:21px}
-    label.prompt{display:block;margin:20px 0 8px;font-weight:800}
-    textarea{width:100%;min-height:128px;padding:15px;border:1px solid #929e98;border-radius:6px;resize:vertical;color:var(--ink);background:#fff}
-    textarea.tall{min-height:220px}.hint{color:var(--muted);font-size:14px}
-    .prior{margin:18px 0;padding:17px;border:1px solid var(--line);border-left:5px solid var(--blue);background:#fafcfd}.prior strong{display:block;color:var(--blue)}.prior-text{white-space:pre-wrap;min-height:30px}.empty{color:var(--muted);font-style:italic}
-    .bridge{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:18px 0}.bridge div{padding:12px;border:1px solid var(--line);background:#fff;font-size:15px;font-weight:750}.bridge span{display:block;color:var(--red);font-size:13px}
-    details{margin:16px 0;border:1px solid var(--line);border-radius:6px;background:#fff}summary{padding:13px 15px;color:var(--blue);font-weight:800;cursor:pointer}details>div{padding:0 15px 16px}
-    .concept{display:grid;grid-template-columns:1fr 1fr;gap:12px}.concept div{padding:14px;background:#f7f8f7;border-left:4px solid var(--line)}
-    .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}.actions button{min-height:50px;padding:10px 18px;border:0;border-radius:6px;color:#fff;background:var(--red);font-weight:850}.actions .secondary{border:2px solid var(--red);color:var(--red);background:#fff}.actions .quiet{border:1px solid var(--line);color:var(--ink);background:#fff}
-    .draft{white-space:pre-wrap;min-height:300px;padding:20px;border:2px solid var(--green);background:#fbfdfc}.word-count{margin-top:8px;color:var(--green);font-weight:850}
-    .checks{display:grid;gap:10px;margin:20px 0}.check{display:grid;grid-template-columns:28px 1fr;gap:10px;padding:13px;border:1px solid var(--line)}.check input{width:22px;height:22px;margin-top:3px}
-    .status{margin-top:22px;padding:18px;border:2px solid var(--green);background:var(--green-soft)}.status h3{margin:0 0 4px}
-    dialog{width:min(760px,calc(100% - 28px));max-height:86vh;padding:0;border:0;border-radius:6px;box-shadow:0 20px 70px rgba(0,0,0,.3)}dialog::backdrop{background:rgba(0,0,0,.48)}.dialog-head{position:sticky;top:0;display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid var(--line);background:#fff}.dialog-head h2{margin:0;font-size:24px}.dialog-body{padding:8px 18px 24px}.dialog-body textarea{min-height:150px}
-    .fact-warning{padding:14px;border-left:5px solid var(--gold);background:var(--gold-soft)}
+    button,textarea,input,select{font:inherit}button{cursor:pointer}
+    button:focus-visible,textarea:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+    .app{width:min(980px,100%);min-height:100vh;margin:auto;background:var(--paper)}
+    .hero{position:relative;height:245px;overflow:hidden;background:#242827}
+    .hero img{width:100%;height:100%;object-fit:cover;opacity:.5}
+    .hero-copy{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:28px clamp(20px,6vw,58px);color:#fff;background:rgba(15,18,17,.28)}
+    .kicker{font-size:15px;font-weight:800}.hero h1{margin:5px 0 4px;font-size:46px;line-height:1.12;letter-spacing:0}.hero p{margin:0;max-width:760px}
+    .toolbar{position:sticky;top:0;z-index:20;display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center;padding:11px clamp(16px,5vw,46px);border-bottom:1px solid var(--line);background:rgba(255,255,255,.97);backdrop-filter:blur(8px)}
+    .track{height:9px;border-radius:5px;background:#e0e5e2;overflow:hidden}.fill{height:100%;width:14.28%;background:var(--red);transition:width .2s}.progress{margin-top:3px;color:var(--muted);font-size:14px;font-weight:800}
+    .tool-actions,.quickbar,.actions{display:flex;gap:9px;flex-wrap:wrap}.icon-btn,.quickbar button,.actions button{min-height:44px;padding:8px 14px;border:1px solid var(--line);border-radius:6px;background:#fff;color:var(--ink);font-weight:800}
+    .quickbar{padding:11px clamp(20px,6vw,58px);border-bottom:1px solid var(--line);overflow:auto;flex-wrap:nowrap;background:#fafbfa}.quickbar button{white-space:nowrap}
+    main{padding:0 clamp(20px,6vw,58px) 70px}.step{display:none;padding:32px 0}.step.active{display:block}.step-mark{color:var(--red);font-size:15px;font-weight:850}
+    h2{margin:5px 0 9px;font-size:36px;line-height:1.25;letter-spacing:0}h3{margin:20px 0 8px;font-size:22px;letter-spacing:0}p{margin:8px 0}.lead{max-width:760px;color:var(--muted)}
+    .task{margin:18px 0;padding:16px 18px;border-left:5px solid var(--red);background:var(--red-soft);font-size:20px;font-weight:800}
+    .teacher{display:grid;gap:0;margin:18px 0;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}.teacher div{display:grid;grid-template-columns:38px 1fr;gap:10px;padding:12px 4px;border-bottom:1px solid var(--line)}.teacher div:last-child{border-bottom:0}.teacher b{color:var(--red)}
+    .notice{padding:15px 17px;border-left:5px solid var(--gold);background:var(--gold-soft)}
+    .map{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:20px 0}.map-card{padding:15px;border-top:5px solid var(--blue);background:var(--blue-soft)}.map-card:nth-child(2),.map-card:nth-child(3){border-color:var(--green);background:var(--green-soft)}.map-card:last-child{border-color:var(--gold);background:var(--gold-soft)}.map-card strong{display:block;margin-bottom:5px}.map-card small{display:block;color:var(--muted)}
+    .angles{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.angle{padding:5px 10px;border:1px solid var(--line);border-radius:999px;background:#fff;font-size:14px}.angle::before{content:"找材料：";color:var(--muted)}
+    label.prompt{display:block;margin:18px 0 7px;font-weight:800}textarea,input[type="text"],select{width:100%;padding:13px;border:1px solid #909b95;border-radius:6px;background:#fff;color:var(--ink)}textarea{min-height:120px;resize:vertical}.tall{min-height:200px}
+    .original{margin:18px 0;padding:17px;border:1px solid var(--line);border-left:5px solid var(--blue);background:#fafcfd}.original strong{display:block;color:var(--blue)}.original-text{white-space:pre-wrap;min-height:32px}.empty{color:var(--muted);font-style:italic}
+    .diagnosis{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:17px 0}.diag{padding:15px;border:1px solid var(--line);background:#fafbfa}.diag strong{display:block;margin-bottom:5px}.diag.have{border-left:5px solid var(--green)}.diag.gap{border-left:5px solid var(--gold)}
+    .bridge{margin:18px 0;padding:18px;border:2px solid var(--red);background:#fff}.bridge .tag{color:var(--red);font-size:14px;font-weight:850}.bridge p{font-size:21px;font-weight:800}
+    .confirm-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:13px 0}.choice{display:flex;align-items:center;gap:8px;padding:11px;border:1px solid var(--line)}.choice input{width:21px;height:21px}
+    details{margin:15px 0;border:1px solid var(--line);border-radius:6px;background:#fff}summary{padding:13px 15px;color:var(--blue);font-weight:800;cursor:pointer}details>div{padding:0 15px 16px}.support{border-left:5px solid var(--gold)}
+    .level{display:grid;grid-template-columns:48px 1fr;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}.level:last-child{border-bottom:0}.level b{color:var(--red)}
+    .actions{margin-top:26px}.actions button{border:0;color:#fff;background:var(--red)}.actions .secondary{border:2px solid var(--red);color:var(--red);background:#fff}.actions .quiet{border:1px solid var(--line);color:var(--ink);background:#fff}
+    .draft{white-space:pre-wrap;min-height:270px;padding:19px;border:2px solid var(--green);background:#fbfdfc}.word-count{margin-top:7px;color:var(--green);font-weight:850}
+    .checks{display:grid;gap:9px;margin:18px 0}.check{display:grid;grid-template-columns:28px 1fr;gap:10px;padding:12px;border:1px solid var(--line)}.check input{width:22px;height:22px;margin-top:3px}
+    .status{margin-top:20px;padding:17px;border:2px solid var(--green);background:var(--green-soft)}.status h3{margin:0 0 3px}
+    dialog{width:min(820px,calc(100% - 28px));max-height:88vh;padding:0;border:0;border-radius:6px;box-shadow:0 20px 70px rgba(0,0,0,.3)}dialog::backdrop{background:rgba(0,0,0,.48)}.dialog-head{position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;align-items:center;padding:13px 18px;border-bottom:1px solid var(--line);background:#fff}.dialog-head h2{margin:0;font-size:24px}.dialog-body{padding:10px 18px 25px}.adult-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.adult-item{padding:14px;border:1px solid var(--line)}.adult-item textarea{min-height:90px}.compact{font-size:14px;color:var(--muted)}
     .print-sheet{display:none}
-    @media(max-width:680px){body{font-size:17px}.hero{height:250px}.toolbar{grid-template-columns:1fr auto}.viewpoints,.concept{grid-template-columns:1fr}.bridge{grid-template-columns:1fr 1fr}.actions button{width:100%}}
-    @media print{@page{size:A4;margin:15mm}body{background:#fff;font-size:12pt}.hero,.toolbar,.quickbar,main{display:none!important}.print-sheet{display:block;padding:0}.print-sheet h1{text-align:center;font-size:22pt}.print-sheet .draft{min-height:180mm;font-size:12pt}.print-sheet .check{padding:7px;break-inside:avoid}}
+    @media(max-width:720px){body{font-size:17px}.hero{height:230px}.hero h1{font-size:36px}.toolbar{grid-template-columns:1fr}.tool-actions{display:grid;grid-template-columns:1fr 1fr}.map,.diagnosis,.confirm-row,.adult-grid{grid-template-columns:1fr}.actions button{width:100%}.quickbar{padding-left:16px;padding-right:16px}}
+    @media print{@page{size:A4;margin:15mm}body{background:#fff;font-size:12pt}.hero,.toolbar,.quickbar,main,dialog{display:none!important}.print-sheet{display:block;padding:0}.print-sheet h1{text-align:center;font-size:22pt}.print-sheet .draft{min-height:178mm;font-size:12pt}.print-sheet .check{padding:7px;break-inside:avoid}}
   </style>
 </head>
 <body>
 <div class="app">
   <header class="hero">
     <img src="assets/tiananmen-square-overview.jpg" alt="天安门广场全景">
-    <div class="hero-copy">
-      <div class="kicker">四年级上册第一单元 · 推荐一个好地方</div>
-      <h1>天安门广场第二稿</h1>
-      <p>这一次不重新想。看着已经说过的话，把两条推荐理由说完整。</p>
-    </div>
+    <div class="hero-copy"><div class="kicker">四年级上册第一单元 · 推荐一个好地方</div><h1>天安门广场逐段修改</h1><p>先看整篇，再看旧话。每次只补一个缺口，不重新编一篇。</p></div>
   </header>
-
   <div class="toolbar">
-    <div><div class="track"><div class="fill" id="fill"></div></div><div class="progress" id="progress">1 / 6</div></div>
-    <button class="icon-btn" type="button" id="printButton" title="打印作文整理稿">打印</button>
+    <div><div class="track"><div class="fill" id="fill"></div></div><div class="progress" id="progress">1 / 7</div></div>
+    <div class="tool-actions"><button class="icon-btn" type="button" data-open="transferDialog">换设备</button><button class="icon-btn" type="button" data-open="adultDialog">成人卡</button></div>
   </div>
   <nav class="quickbar" aria-label="随时查看">
     <button type="button" data-open="teacherDialog">老师要求</button>
-    <button type="button" data-open="priorDialog">上次说过的话</button>
-    <button type="button" data-open="mapDialog">四段地图</button>
+    <button type="button" data-open="materialDialog">我的旧材料</button>
+    <button type="button" data-open="mapDialog">全文结构图</button>
   </nav>
 
   <main>
     <section class="step active" data-step="0">
-      <div class="step-mark">第1步 · 先看清任务</div>
-      <h2>这篇不是景点清单</h2>
-      <div class="task">目标：让同学听完以后，明白天安门广场为什么值得亲自去。</div>
-      <div class="teacher-lines">
-        <div><b>1</b><span>把推荐的地方介绍清楚。</span></div>
-        <div><b>2</b><span>把推荐的理由写充分。</span></div>
-        <div><b>3</b><span>正确使用标点，写后自己读一遍并修改。</span></div>
-      </div>
-      <div class="center-line"><strong>这篇文章要说明</strong>天安门广场既有值得亲自感受的现场，也能让人通过具体事物了解历史与纪念的意义。</div>
-      <div class="viewpoints">
-        <div class="viewpoint"><h3>观点一：现场体验</h3><p>不是只报“升旗仪式”这个名称，而要让同学知道到场能经历什么、为什么值得去。</p></div>
-        <div class="viewpoint"><h3>观点二：历史认识</h3><p>不是堆历史知识，而要说明一个具体事物让同学多明白什么、为什么值得了解。</p></div>
-      </div>
-      <div class="actions"><button type="button" data-next>我知道这篇要说明什么</button></div>
+      <div class="step-mark">第1步 · 先看全文</div><h2>先知道整篇要完成什么</h2>
+      <div class="task">写给没去过的同学：介绍清楚天安门广场，用具体内容说明它为什么值得去。</div>
+      <div class="teacher"><div><b>1</b><span>把推荐的地方介绍清楚。</span></div><div><b>2</b><span>把推荐的理由写充分。</span></div><div><b>3</b><span>正确使用标点，写后自读修改。</span></div></div>
+      <h3>找材料的角度</h3><div class="angles"><span class="angle">看到什么</span><span class="angle">听到什么</span><span class="angle">做什么</span><span class="angle">知道什么</span><span class="angle">为什么值得</span></div>
+      <p class="lead">这些只是找内容的角度，不自动等于五个段落，也不要求全部写。</p>
+      <h3>本次暂定的文章模块</h3>
+      <div class="map"><div class="map-card"><strong>开头</strong>推荐哪里，先让读者知道全文方向。<small>已有多少：看第2步</small></div><div class="map-card"><strong>理由一</strong>一个现场体验，说明为什么值得亲自去。<small>候选证据由旧材料筛选</small></div><div class="map-card"><strong>理由二</strong>一个具体事物，说明能了解什么。<small>事实与想法要分开</small></div><div class="map-card"><strong>结尾</strong>回到推荐，不重讲全部内容。<small>最后再处理</small></div></div>
+      <div class="notice"><b>这不是老师规定的四段模板。</b>老师要求的是“地方清楚、理由充分”。本次先用四个模块，是为了把已有的两类材料组织起来；材料不支持时可以调整。</div>
+      <label class="prompt" for="routeNote">孩子看完后，只说：这个安排是否能表达我想推荐的原因？</label>
+      <div class="confirm-row"><label class="choice"><input type="radio" name="route" value="ok" data-radio>能，先这样整理</label><label class="choice"><input type="radio" name="route" value="change" data-radio>不能，我要调整</label></div>
+      <textarea id="routeNote" data-save placeholder="只有选“要调整”时，记录孩子想改哪一部分。"></textarea>
+      <div class="actions"><button type="button" data-next>进入旧材料</button></div>
     </section>
 
     <section class="step" data-step="1">
-      <div class="step-mark">第2步 · 把旧材料放在眼前</div>
-      <h2>不许重新硬想</h2>
-      <p class="lead">家长把上一轮已经记录的原话放进下面两栏。只删口头重复，不补新的事实和感受。孩子听完后，只确认“这是我的意思”或重新说。</p>
-      <label class="prompt" for="priorExperience">以前说过的现场材料</label>
-      <textarea id="priorExperience" data-save placeholder="家长在这里粘贴上一轮关于现场体验的记录。"></textarea>
-      <label class="prompt" for="priorHistory">以前说过的历史材料</label>
-      <textarea id="priorHistory" data-save placeholder="家长在这里粘贴上一轮关于历史与纪念的记录。"></textarea>
-      <label class="prompt" for="priorCorrection">已经发现不能直接写进作文的内容</label>
-      <textarea id="priorCorrection" data-save placeholder="例如：事实还没核实、把资料中知道的误写成现场看见的。"></textarea>
-      <div class="fact-warning"><b>事实边界：</b>人民英雄纪念碑上不是“刻着所有英雄的真实姓名”；资料或影像里的声音，也不能写成自己在广场现场听到。</div>
-      <div class="actions"><button class="secondary" type="button" data-back>上一步</button><button type="button" data-next>旧材料已经在眼前</button></div>
+      <div class="step-mark">第2步 · 原话归位</div><h2>把上次说过的话放在眼前</h2>
+      <p class="lead">家长粘贴或找回上次记录。只删明显口头重复，不补成人的新意思。孩子听回后确认；已经说过的内容不再重新回忆。</p>
+      <label class="prompt" for="priorOpening">可能放在开头的话</label><textarea id="priorOpening" data-save placeholder="没有就留空。"></textarea>
+      <label class="prompt" for="priorExperience">关于现场体验的话</label><textarea id="priorExperience" data-save placeholder="粘贴上次关于升旗、国旗、国歌、人群动作等口述记录。"></textarea>
+      <label class="prompt" for="priorHistory">关于历史或纪念意义的话</label><textarea id="priorHistory" data-save placeholder="粘贴上次关于具体事物、资料事实和自己的想法。"></textarea>
+      <label class="prompt" for="priorEnding">可能放在结尾的话</label><textarea id="priorEnding" data-save placeholder="没有就留空。"></textarea>
+      <label class="prompt" for="priorCorrection">待核实、要删除或要分清来源的内容</label><textarea id="priorCorrection" data-save placeholder="只记录问题，不在这里替孩子改成完整句。"></textarea>
+      <div class="confirm-row"><label class="choice"><input type="checkbox" id="childConfirmedPrior" data-check="prior">孩子听回后确认：这是我的意思</label><label class="choice"><input type="checkbox" id="sourcesSeparated" data-check="source">已分清：现场、资料、自己的想法</label></div>
+      <div class="actions"><button class="secondary" type="button" data-back>上一步</button><button type="button" data-next>开始逐段整理</button></div>
     </section>
 
-    <section class="step" data-step="2">
-      <div class="step-mark">第3步 · 完整说观点一</div>
-      <h2>让同学看见现场</h2>
-      <div class="prior"><strong>你以前说过的现场材料</strong><div class="prior-text" id="showExperience"></div></div>
-      <div class="bridge">
-        <div><span>先定段意</span>这一段要证明什么</div>
-        <div><span>再按顺序</span>先发生、接着、最后</div>
-        <div><span>抓住细节</span>动作、声音或变化</div>
-        <div><span>最后收口</span>同学为何值得去</div>
-      </div>
-      <div class="task">请一口气完整说这一段。家长等他说完，再忠实记录。</div>
-      <label class="prompt" for="bodyExperience">观点一的完整段落</label>
-      <textarea class="tall" id="bodyExperience" data-save placeholder="这里记录孩子完整口述的一段，不拆成许多小空格。"></textarea>
-      <details><summary>真的停住了，再打开一个提示</summary><div><p>只问：没去过的同学听完这一段，会多看到、听到或感受到什么？</p><p>不要替他说“庄严”或“肃穆”。先让他说明是哪些动作、声音和现场表现使他产生这种感觉。</p></div></details>
-      <details><summary>“庄严”和“肃穆”怎样判断</summary><div class="concept"><div><b>庄严</b><br>场面重要、规整，让人自然认真起来。</div><div><b>肃穆</b><br>安静而严肃，常用于纪念或重要仪式。</div><p style="grid-column:1/-1">先找到真实细节，再判断哪个词更准确；两个都不合适时，用自己的话说，不必硬用。</p></div></details>
-      <div class="actions"><button class="secondary" type="button" data-back>上一步</button><button type="button" data-next>这一段已经完整</button></div>
+    <section class="step paragraph-step" data-step="2" data-part="opening">
+      <div class="step-mark">第3步 · 开头</div><h2>让读者一开始就知道方向</h2>
+      <div class="original"><strong>家长记录的上轮口述</strong><div class="original-text" data-original="priorOpening"></div></div>
+      <div class="task">这段要完成什么：说清推荐的地方，并让读者知道接下来要听你讲“为什么值得去”。</div>
+      <div class="diagnosis"><div class="diag have"><strong>我已经写清什么</strong><div data-have="opening"></div></div><div class="diag gap"><strong>现在卡在哪里</strong><div>先看独立首答：地点和总推荐判断是否都出现。没有作答前，不提前判定。</div></div></div>
+      <div class="bridge"><div class="tag">修改桥 · 只想一件事</div><p>没去过的同学读完第一段，应该先知道哪两件事？</p></div>
+      <label class="prompt" for="opening">我重新组织这一段</label><textarea class="tall" id="opening" data-save placeholder="孩子先完整口述，家长忠实记录。"></textarea>
+      <details class="support"><summary>真的停住了，成人再打开支架</summary><div><div class="level"><b>L1</b><span>只提醒：检查“地方”和“推荐判断”两处。</span></div><div class="level"><b>L2</b><span>让孩子选先说哪类信息：地点、推荐判断，或自己换一种顺序。不要给完整句。</span></div><div class="level"><b>L3</b><span>内容已经明确但不会成句时才给槽：我想推荐____。这里既____，又____。</span></div></div></details>
+      <div class="actions"><button class="secondary" type="button" data-back>上一步</button><button type="button" data-next>开头先放好</button></div>
     </section>
 
-    <section class="step" data-step="3">
-      <div class="step-mark">第4步 · 完整说观点二</div>
-      <h2>让同学多明白一件事</h2>
-      <div class="prior"><strong>你以前说过的历史材料</strong><div class="prior-text" id="showHistory"></div></div>
-      <div class="bridge">
-        <div><span>先定段意</span>这一段要证明什么</div>
-        <div><span>只选一物</span>它是什么、在哪里</div>
-        <div><span>说准事实</span>我看见或查到什么</div>
-        <div><span>最后收口</span>同学会多明白什么</div>
-      </div>
-      <div class="task">请一口气完整说这一段。只保留能证明“值得了解”的内容。</div>
-      <label class="prompt" for="bodyHistory">观点二的完整段落</label>
-      <textarea class="tall" id="bodyHistory" data-save placeholder="这里记录孩子完整口述的一段。历史事实不确定时先标出来，不当场扩成新课程。"></textarea>
-      <details><summary>真的停住了，再打开一个提示</summary><div><p>只问：同学来到这个具体事物前，会多知道什么？知道以后，他为什么会觉得这一趟值得？</p><p>不能回答时，先删去旁支故事，只保留一个准确事实再说。</p></div></details>
-      <details><summary>家长事实核对</summary><div><p>碑身正面为“人民英雄永垂不朽”，背面为碑文，基座有反映历史事件的浮雕。孩子可以写自己看见或从可靠资料了解到的内容，但必须分清来源。</p></div></details>
-      <div class="actions"><button class="secondary" type="button" data-back>上一步</button><button type="button" data-next>第二段也已经完整</button></div>
+    <section class="step paragraph-step" data-step="3" data-part="experience">
+      <div class="step-mark">第4步 · 理由一</div><h2>用一个现场体验证明“值得去”</h2>
+      <div class="original"><strong>家长记录的上轮口述</strong><div class="original-text" data-original="priorExperience"></div></div>
+      <div class="task">这段要完成什么：让同学看到或听到一个具体场景，并明白为什么值得亲自到场。</div>
+      <div class="diagnosis"><div class="diag have"><strong>我已经写清什么</strong><div data-have="experience"></div></div><div class="diag gap"><strong>现在卡在哪里</strong><div>上轮已有若干现场细节；本轮重点检查这些细节是否按顺序连起来，并且最后说明“为什么值得去”。</div></div></div>
+      <div class="bridge"><div class="tag">修改桥 · 只补当前缺口</div><p>听完你的场景后，同学会多经历什么？这为什么值得他亲自来？</p></div>
+      <label class="prompt" for="bodyExperience">我重新组织这一段</label><textarea class="tall" id="bodyExperience" data-save placeholder="保留自己的事实和表达。先说内容，词语最后再改。"></textarea>
+      <details class="support"><summary>真的停住了，成人再打开支架</summary><div><div class="level"><b>L1</b><span>只指出缺口：顺序、细节、同学获得、推荐收口，四选一。</span></div><div class="level"><b>L2</b><span>若缺细节，只让孩子在“动作、声音、变化、现场表现、都不准确”中选观察方向。</span></div><div class="level"><b>L3</b><span>关系已经想清但不会成句时才给槽：当____时，我从____看到／听到____。这让到场的人____，所以____。</span></div><p class="compact">不要先塞“庄严”或“肃穆”。先说可观察的画面，再决定是否需要抽象词。</p></div></details>
+      <div class="actions"><button class="secondary" type="button" data-back>上一步</button><button type="button" data-next>理由一先放好</button></div>
     </section>
 
-    <section class="step" data-step="4">
-      <div class="step-mark">第5步 · 补上开头和结尾</div>
-      <h2>让整篇围绕同一个中心</h2>
-      <div class="viewpoints">
-        <div class="viewpoint"><h3>开头只做两件事</h3><p>写清推荐哪里；告诉同学它最值得去的两方面。</p></div>
-        <div class="viewpoint"><h3>结尾只做两件事</h3><p>把两条理由合回来；再次告诉同学为什么推荐。</p></div>
-      </div>
-      <label class="prompt" for="opening">完整口述开头</label>
-      <textarea id="opening" data-save placeholder="不用从历史讲起，先让读者知道你推荐哪里、为什么值得去。"></textarea>
-      <label class="prompt" for="ending">完整口述结尾</label>
-      <textarea id="ending" data-save placeholder="不要重复主体段，收住两条理由并回应推荐对象。"></textarea>
-      <div class="actions"><button class="secondary" type="button" data-back>上一步</button><button type="button" data-next>首尾已经补好</button></div>
+    <section class="step paragraph-step" data-step="4" data-part="history">
+      <div class="step-mark">第5步 · 理由二</div><h2>用一个具体事物说明“能了解什么”</h2>
+      <div class="original"><strong>家长记录的上轮口述</strong><div class="original-text" data-original="priorHistory"></div></div>
+      <div class="task">这段要完成什么：选一个具体事物，分清可靠事实和自己的想法，再说明同学为什么值得了解。</div>
+      <div class="diagnosis"><div class="diag have"><strong>我已经写清什么</strong><div data-have="history"></div></div><div class="diag gap"><strong>现在卡在哪里</strong><div>上轮能说出具体事物和部分资料；本轮重点修复来源混合、事实准确，以及“知道以后为什么值得”没有闭合。</div></div></div>
+      <div class="bridge"><div class="tag">修改桥 · 只补当前缺口</div><p>这段里哪一句是可靠事实？它让同学多明白了什么？</p></div>
+      <label class="prompt" for="bodyHistory">我重新组织这一段</label><textarea class="tall" id="bodyHistory" data-save placeholder="资料中知道的就说“从资料中了解到”，不要写成亲眼看见或亲耳听到。"></textarea>
+      <details class="support"><summary>真的停住了，成人再打开支架</summary><div><div class="level"><b>L1</b><span>只提醒他标出：可靠事实、自己的理解、推荐判断。</span></div><div class="level"><b>L2</b><span>让孩子判断当前句属于“看到的、资料知道的、自己的想法、还不能确定”。</span></div><div class="level"><b>L3</b><span>关系已经明确但不会成句时才给槽：从____我了解到____。这让我明白____，也让来这里的同学____。</span></div><p class="compact">成人事实边界见“成人卡”，不要在孩子首答前讲成长篇知识。</p></div></details>
+      <div class="actions"><button class="secondary" type="button" data-back>上一步</button><button type="button" data-next>理由二先放好</button></div>
     </section>
 
-    <section class="step" data-step="5">
-      <div class="step-mark">第6步 · 读回、修改、再誊写</div>
-      <h2>看见自己的整篇文章</h2>
-      <p class="lead">按钮只把前面四段按顺序放在一起，不替孩子续写或润色。</p>
-      <div class="actions"><button type="button" id="buildDraft">生成四段整理稿</button><button class="quiet" type="button" id="copyDraft">复制整理稿</button></div>
-      <div class="draft empty" id="draft" aria-live="polite">还没有生成。完成前面的四段后，再点“生成四段整理稿”。</div>
-      <div class="word-count" id="draftCount">当前约 0 字｜本次校内目标按约500字检查</div>
-      <p class="hint" id="lengthAdvice">字数不是第一目标。先检查两条理由是否都有具体证据和“为什么值得去”。</p>
-      <h3>孩子自己完成检查</h3>
-      <div class="checks">
-        <label class="check"><input type="checkbox" data-check="place"><span><b>地方清楚：</b>读者一开始就知道我推荐天安门广场。</span></label>
-        <label class="check"><input type="checkbox" data-check="reason"><span><b>理由充分：</b>两个主体段都不是只列名称，而是有具体内容和推荐价值。</span></label>
-        <label class="check"><input type="checkbox" data-check="source"><span><b>事实准确：</b>我分清了现场看到、资料知道和自己的想法。</span></label>
-        <label class="check"><input type="checkbox" data-check="read"><span><b>自读修改：</b>我完整读了一遍，改了重复、断句或标点。</span></label>
-      </div>
-      <label class="prompt" for="confirmedDraft">孩子确认后的最终稿</label>
-      <textarea class="tall" id="confirmedDraft" data-save placeholder="把整理稿粘贴到这里。只按孩子读回后的决定修改，不增加成人的新意思。"></textarea>
-      <div class="word-count" id="confirmedCount">确认稿约 0 字</div>
-      <div class="status"><h3 id="statusTitle">完成状态：还在整理</h3><p id="statusText">四段成稿并完成四项检查后，才进入学校作文纸誊写。</p></div>
-      <details><summary>家长只记录这三项</summary><div><p>1. 哪一步孩子能独立说完整；2. 打开过哪一个提示；3. 读回后孩子自己改了什么。</p><label class="prompt" for="parentNote">本次记录</label><textarea id="parentNote" data-save></textarea></div></details>
-      <div class="actions"><button class="secondary" type="button" data-back>上一步</button><button class="quiet" type="button" id="resetButton">清空本机记录</button></div>
+    <section class="step paragraph-step" data-step="5" data-part="ending">
+      <div class="step-mark">第6步 · 结尾</div><h2>回到推荐，不把前文再说一遍</h2>
+      <div class="original"><strong>家长记录的上轮口述</strong><div class="original-text" data-original="priorEnding"></div></div>
+      <div class="task">这段要完成什么：把前面的推荐理由合回来，让读者知道你为什么希望他去。</div>
+      <div class="diagnosis"><div class="diag have"><strong>我已经写清什么</strong><div data-have="ending"></div></div><div class="diag gap"><strong>现在卡在哪里</strong><div>先看独立首答：是否回到“推荐”，有没有机械重复两个主体段。没有作答前不替孩子判断。</div></div></div>
+      <div class="bridge"><div class="tag">修改桥 · 只想一件事</div><p>如果只能用最后一句邀请同学，你最想让他记住什么？</p></div>
+      <label class="prompt" for="ending">我重新组织这一段</label><textarea class="tall" id="ending" data-save placeholder="孩子自己收住全文。不要复制开头。"></textarea>
+      <details class="support"><summary>真的停住了，成人再打开支架</summary><div><div class="level"><b>L1</b><span>只提醒：回到推荐，不重讲全部细节。</span></div><div class="level"><b>L2</b><span>让孩子选择结尾动作：合回两类理由、邀请同学、表达期待，或自己重说。</span></div><div class="level"><b>L3</b><span>内容明确后才给槽：如果你想____，也想____，就____。</span></div></div></details>
+      <div class="actions"><button class="secondary" type="button" data-back>上一步</button><button type="button" data-next>组装全文</button></div>
+    </section>
+
+    <section class="step" data-step="6">
+      <div class="step-mark">第7步 · 组装、读回、确认</div><h2>看见自己改过的整篇文章</h2>
+      <p class="lead">“组装”只把前面四段放到一起，不续写、不润色。缺哪一段，就回到那一段处理。</p>
+      <div class="actions"><button type="button" id="buildDraft">组装我的四段</button><button class="quiet" type="button" id="copyDraft">复制整理稿</button><button class="quiet" type="button" id="printButton">打印整理稿</button></div>
+      <div class="draft empty" id="draft" aria-live="polite">还没有组装。</div><div class="word-count" id="draftCount">当前约 0 字｜学校本次目标约500字</div><p class="lead" id="lengthAdvice">先看内容是否完整，再看字数。</p>
+      <h3>孩子自己检查</h3>
+      <div class="checks"><label class="check"><input type="checkbox" data-check="place"><span>开头能让同学知道我推荐哪里。</span></label><label class="check"><input type="checkbox" data-check="reason"><span>每个理由都有具体内容，也说清为什么值得去。</span></label><label class="check"><input type="checkbox" data-check="accuracy"><span>我分清了现场、资料和自己的想法，删除了不准确内容。</span></label><label class="check"><input type="checkbox" data-check="flow"><span>我完整读了一遍，改了重复、断句和标点。</span></label></div>
+      <label class="prompt" for="confirmedDraft">孩子确认后的全文</label><textarea class="tall" id="confirmedDraft" data-save placeholder="只有孩子读回并决定修改后，才把确认稿放在这里。"></textarea><div class="word-count" id="confirmedCount">确认稿约 0 字</div>
+      <div class="status"><h3 id="statusTitle">完成状态：还在修改</h3><p id="statusText">确认全文并完成四项检查后，再誊写到学校作文纸。</p></div>
+      <div class="actions"><button class="secondary" type="button" data-back>返回上一段</button><button class="quiet" type="button" data-open="adultDialog">填写成人记录</button></div>
     </section>
   </main>
 
-  <dialog id="teacherDialog"><div class="dialog-head"><h2>老师要求</h2><button class="icon-btn" data-close type="button">关闭</button></div><div class="dialog-body"><div class="teacher-lines"><div><b>1</b><span>地方介绍清楚。</span></div><div><b>2</b><span>推荐理由充分。</span></div><div><b>3</b><span>标点正确，自读修改。</span></div></div><p>具体景点、段数和“好词”不是老师固定答案。</p></div></dialog>
-  <dialog id="priorDialog"><div class="dialog-head"><h2>上次说过的话</h2><button class="icon-btn" data-close type="button">关闭</button></div><div class="dialog-body"><h3>现场材料</h3><div class="prior-text" id="dialogExperience"></div><h3>历史材料</h3><div class="prior-text" id="dialogHistory"></div><h3>不能直接写的内容</h3><div class="prior-text" id="dialogCorrection"></div></div></dialog>
-  <dialog id="mapDialog"><div class="dialog-head"><h2>四段地图</h2><button class="icon-btn" data-close type="button">关闭</button></div><div class="dialog-body"><div class="teacher-lines"><div><b>1</b><span>开头：推荐哪里，为什么值得去。</span></div><div><b>2</b><span>现场体验：具体场景、细节、同学为什么值得来。</span></div><div><b>3</b><span>历史认识：准确事实、同学多明白什么。</span></div><div><b>4</b><span>结尾：合回两条理由，再次推荐。</span></div></div></div></dialog>
+  <dialog id="teacherDialog"><div class="dialog-head"><h2>老师要求</h2><button class="icon-btn" data-close type="button">关闭</button></div><div class="dialog-body"><div class="teacher"><div><b>1</b><span>地方介绍清楚。</span></div><div><b>2</b><span>推荐理由充分。</span></div><div><b>3</b><span>标点正确，自读修改。</span></div></div><p>具体景点、段数和好词不是老师固定答案。本页四个模块是当前教学安排，不冒充老师原话。</p></div></dialog>
+  <dialog id="materialDialog"><div class="dialog-head"><h2>我的旧材料</h2><button class="icon-btn" data-close type="button">关闭</button></div><div class="dialog-body"><h3>开头</h3><div class="original-text" data-dialog-original="priorOpening"></div><h3>现场体验</h3><div class="original-text" data-dialog-original="priorExperience"></div><h3>历史或纪念</h3><div class="original-text" data-dialog-original="priorHistory"></div><h3>结尾</h3><div class="original-text" data-dialog-original="priorEnding"></div><h3>待核实或删除</h3><div class="original-text" data-dialog-original="priorCorrection"></div></div></dialog>
+  <dialog id="mapDialog"><div class="dialog-head"><h2>全文结构图</h2><button class="icon-btn" data-close type="button">关闭</button></div><div class="dialog-body"><div class="map"><div class="map-card"><strong>开头</strong>地点＋总推荐判断</div><div class="map-card"><strong>理由一</strong>现场细节→同学获得→值得去</div><div class="map-card"><strong>理由二</strong>准确事实→明白什么→值得了解</div><div class="map-card"><strong>结尾</strong>合回理由→回应推荐</div></div><p>这是本次暂定的成文图，不是所有作文都要套用的固定结构。</p></div></dialog>
+  <dialog id="adultDialog"><div class="dialog-head"><h2>独立成人卡</h2><button class="icon-btn" data-close type="button">关闭</button></div><div class="dialog-body">
+    <div class="notice"><b>开启顺序：</b>每个新段落都从 L0 独立处理开始。孩子真实停住后，才依次使用 L1 方向提示、L2 选择范围、L3 句式槽。不要因为上一段需要帮助，就提前打开下一段提示。</div>
+    <h3>成人不能替孩子说</h3><p>不代定中心、不代选事实、不直接塞“庄严／肃穆”等评价词、不把成人润色句写成孩子原话、不用错误历史知识换取篇幅。</p>
+    <h3>事实边界</h3><p>人民英雄纪念碑碑身正面题写“人民英雄永垂不朽”，背面是碑文，基座有历史题材浮雕。不能写成“碑上刻着所有英雄的真实姓名”。资料里知道的内容要标明来源，不能伪装成现场亲历。</p>
+    <h3>逐段记录</h3><div class="adult-grid">
+      <div class="adult-item"><b>开头</b><label class="prompt" for="helpOpening">完成条件</label><select id="helpOpening" data-save><option value="">未记录</option><option>L0 独立完成</option><option>L1 方向提示后</option><option>L2 选择范围后</option><option>L3 句式槽后</option><option>仍未完成</option></select><label class="prompt" for="adultOpening">成人建议</label><textarea id="adultOpening" data-save></textarea><label class="prompt" for="childOpening">孩子最后选择</label><textarea id="childOpening" data-save></textarea></div>
+      <div class="adult-item"><b>理由一</b><label class="prompt" for="helpExperience">完成条件</label><select id="helpExperience" data-save><option value="">未记录</option><option>L0 独立完成</option><option>L1 方向提示后</option><option>L2 选择范围后</option><option>L3 句式槽后</option><option>仍未完成</option></select><label class="prompt" for="adultExperience">成人建议</label><textarea id="adultExperience" data-save></textarea><label class="prompt" for="childExperience">孩子最后选择</label><textarea id="childExperience" data-save></textarea></div>
+      <div class="adult-item"><b>理由二</b><label class="prompt" for="helpHistory">完成条件</label><select id="helpHistory" data-save><option value="">未记录</option><option>L0 独立完成</option><option>L1 方向提示后</option><option>L2 选择范围后</option><option>L3 句式槽后</option><option>仍未完成</option></select><label class="prompt" for="adultHistory">成人建议</label><textarea id="adultHistory" data-save></textarea><label class="prompt" for="childHistory">孩子最后选择</label><textarea id="childHistory" data-save></textarea></div>
+      <div class="adult-item"><b>结尾</b><label class="prompt" for="helpEnding">完成条件</label><select id="helpEnding" data-save><option value="">未记录</option><option>L0 独立完成</option><option>L1 方向提示后</option><option>L2 选择范围后</option><option>L3 句式槽后</option><option>仍未完成</option></select><label class="prompt" for="adultEnding">成人建议</label><textarea id="adultEnding" data-save></textarea><label class="prompt" for="childEnding">孩子最后选择</label><textarea id="childEnding" data-save></textarea></div>
+    </div>
+  </div></dialog>
+  <dialog id="transferDialog"><div class="dialog-head"><h2>换设备继续</h2><button class="icon-btn" data-close type="button">关闭</button></div><div class="dialog-body"><p>旧版记录会在同一浏览器自动找回。换电脑时，在原设备生成接力码，在新设备粘贴一次即可。</p><div class="actions"><button type="button" id="exportState">生成并复制接力码</button></div><label class="prompt" for="transferCode">接力码</label><textarea id="transferCode" placeholder="在新设备粘贴接力码，再点载入。"></textarea><div class="actions"><button type="button" id="importState">载入接力码</button><button class="quiet" type="button" id="resetButton">清空本机记录</button></div><p class="compact" id="transferStatus"></p></div></dialog>
 
-  <section class="print-sheet">
-    <h1>天安门广场第二稿</h1>
-    <p style="text-align:center">四年级上册第一单元《推荐一个好地方》</p>
-    <div class="draft" id="printDraft"></div>
-    <h2>完成检查</h2>
-    <div class="checks"><div class="check">□ 地方介绍清楚</div><div class="check">□ 推荐理由充分</div><div class="check">□ 事实与来源准确</div><div class="check">□ 自读并修改标点</div></div>
-  </section>
+  <section class="print-sheet"><h1>天安门广场作文确认稿</h1><p style="text-align:center">四年级上册第一单元《推荐一个好地方》</p><div class="draft" id="printDraft"></div><h2>孩子检查</h2><div class="checks"><div class="check">□ 地方清楚</div><div class="check">□ 理由具体充分</div><div class="check">□ 事实和来源准确</div><div class="check">□ 自读并修改标点</div></div></section>
 </div>
-
 <script>
 (() => {
-  const KEY='chinese-writing:u1:tiananmen:teacher-led:r08';
+  const KEY='chinese-writing:u1:tiananmen:paragraph-diagnosis:r09';
+  const OLD_KEY='chinese-writing:u1:tiananmen:teacher-led:r08';
   const steps=[...document.querySelectorAll('.step')];
-  const fill=document.getElementById('fill');
-  const progress=document.getElementById('progress');
-  let state={};
-  try{state=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(_){state={}}
+  let state={};try{state=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(_){state={}}
+  if(!Object.keys(state).length){try{const old=JSON.parse(localStorage.getItem(OLD_KEY)||'{}');if(old&&Object.keys(old).length){state={...old,step:0};if(old.opening)state.priorOpening=old.opening;if(old.ending)state.priorEnding=old.ending}}catch(_){}}
   let current=Math.min(Number.isInteger(state.step)?state.step:0,steps.length-1);
-
   const save=()=>{state.step=current;localStorage.setItem(KEY,JSON.stringify(state))};
-  const show=index=>{current=Math.max(0,Math.min(index,steps.length-1));steps.forEach((s,i)=>s.classList.toggle('active',i===current));fill.style.width=`${((current+1)/steps.length)*100}%`;progress.textContent=`${current+1} / ${steps.length}`;save();window.scrollTo({top:250,behavior:'smooth'})};
-  const textLength=text=>(text||'').replace(/[\s\n]/g,'').length;
   const value=id=>document.getElementById(id)?.value.trim()||'';
-  const setText=(id,text,emptyText)=>{const el=document.getElementById(id);if(!el)return;el.textContent=text||emptyText;el.classList.toggle('empty',!text)};
-
-  document.querySelectorAll('[data-save]').forEach(el=>{if(state[el.id]!==undefined)el.value=state[el.id];el.addEventListener('input',()=>{state[el.id]=el.value;save();sync()})});
-  document.querySelectorAll('[data-check]').forEach(el=>{const k=`check:${el.dataset.check}`;el.checked=Boolean(state[k]);el.addEventListener('change',()=>{state[k]=el.checked;save();sync()})});
-  document.querySelectorAll('[data-next]').forEach(b=>b.addEventListener('click',()=>show(current+1)));
-  document.querySelectorAll('[data-back]').forEach(b=>b.addEventListener('click',()=>show(current-1)));
-  document.querySelectorAll('[data-open]').forEach(b=>b.addEventListener('click',()=>document.getElementById(b.dataset.open).showModal()));
-  document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>b.closest('dialog').close()));
-
-  const sync=()=>{
-    const pe=value('priorExperience'),ph=value('priorHistory'),pc=value('priorCorrection');
-    setText('showExperience',pe,'家长还没有放入上次记录。先回到第2步。');
-    setText('showHistory',ph,'家长还没有放入上次记录。先回到第2步。');
-    setText('dialogExperience',pe,'尚未录入');setText('dialogHistory',ph,'尚未录入');setText('dialogCorrection',pc,'尚未录入');
-    const confirmed=value('confirmedDraft');
-    document.getElementById('confirmedCount').textContent=`确认稿约 ${textLength(confirmed)} 字`;
-    const checks=[...document.querySelectorAll('[data-check]')].every(c=>c.checked);
-    const done=confirmed.length>0&&checks;
-    document.getElementById('statusTitle').textContent=done?'完成状态：可以誊写':'完成状态：还在整理';
-    document.getElementById('statusText').textContent=done?'孩子已确认全文并完成老师要求的检查。下一步只需誊写到学校作文纸。':'四段成稿并完成四项检查后，才进入学校作文纸誊写。';
-    document.getElementById('printDraft').textContent=confirmed||document.getElementById('draft').textContent;
+  const count=text=>(text||'').replace(/[\s\n]/g,'').length;
+  const fill=document.getElementById('fill'),progress=document.getElementById('progress');
+  const show=index=>{document.querySelectorAll('[data-save]').forEach(el=>{state[el.id]=el.value});current=Math.max(0,Math.min(index,steps.length-1));steps.forEach((s,i)=>s.classList.toggle('active',i===current));fill.style.width=`${((current+1)/steps.length)*100}%`;progress.textContent=`${current+1} / ${steps.length}`;save();sync();window.scrollTo({top:225,behavior:'smooth'})};
+  const setBlock=(el,text,emptyText='尚未放入旧材料')=>{el.textContent=text||emptyText;el.classList.toggle('empty',!text)};
+  const detect=(part,text)=>{
+    if(!text)return '这部分还没有旧话。先直接口述一次，再根据首答判断缺口。';
+    const found=[];
+    if(part==='opening'){if(/天安门/.test(text))found.push('推荐地点');if(/推荐|值得|好地方/.test(text))found.push('推荐判断')}
+    if(part==='experience'){if(/国旗|升旗/.test(text))found.push('具体对象');if(/国歌|听/.test(text))found.push('声音');if(/注目礼|站|升起|升高|变化/.test(text))found.push('动作或变化');if(/值得|亲自|体验/.test(text))found.push('推荐收口')}
+    if(part==='history'){if(/纪念碑/.test(text))found.push('具体事物');if(/资料|了解到|题写|碑文|浮雕|永垂不朽/.test(text))found.push('资料事实');if(/明白|感受|纪念|意义/.test(text))found.push('自己的认识');if(/值得|推荐/.test(text))found.push('推荐收口')}
+    if(part==='ending'){if(/推荐|来|去|欢迎/.test(text))found.push('回应推荐');if(/体验|历史|纪念|了解/.test(text))found.push('合回理由')}
+    return found.length?`旧话里已经出现：${[...new Set(found)].join('、')}。先保留，不重复想。`:'已经有旧话，但还要由孩子听回后说清它完成了什么。';
   };
-
-  document.getElementById('buildDraft').addEventListener('click',()=>{
-    const parts=[value('opening'),value('bodyExperience'),value('bodyHistory'),value('ending')].filter(Boolean);
-    const text=parts.join('\n\n');
-    setText('draft',text,'四段还没有记录完整。请回到缺少的部分继续口述。');
-    const count=textLength(text);
-    document.getElementById('draftCount').textContent=`当前约 ${count} 字｜本次校内目标按约500字检查`;
-    let advice='先检查两条理由是否都有具体证据和“为什么值得去”。';
-    if(count>0&&count<430)advice='先看两个主体段：缺的是具体场景、准确事实，还是“为什么值得去”？只补缺少的一层，不增加新景点。';
-    if(count>=430&&count<=550)advice='篇幅已经接近目标。现在重点读通、删重复、核事实和改标点。';
-    if(count>550)advice='先删重复意思和旁支知识，不删除能证明推荐理由的关键细节。';
-    document.getElementById('lengthAdvice').textContent=advice;
-    document.getElementById('printDraft').textContent=text;
-    state.generatedDraft=text;save();
-  });
-  if(state.generatedDraft){setText('draft',state.generatedDraft,'');const c=textLength(state.generatedDraft);document.getElementById('draftCount').textContent=`当前约 ${c} 字｜本次校内目标按约500字检查`}
-  document.getElementById('copyDraft').addEventListener('click',async()=>{const text=document.getElementById('draft').textContent;if(!text||document.getElementById('draft').classList.contains('empty'))return;try{await navigator.clipboard.writeText(text);document.getElementById('copyDraft').textContent='已复制'}catch(_){document.getElementById('copyDraft').textContent='请长按选择复制'}});
+  const sync=()=>{
+    document.querySelectorAll('[data-original]').forEach(el=>setBlock(el,value(el.dataset.original)));
+    document.querySelectorAll('[data-dialog-original]').forEach(el=>setBlock(el,value(el.dataset.dialogOriginal),'尚未录入'));
+    document.querySelectorAll('[data-have]').forEach(el=>{const p=el.dataset.have;const map={opening:'priorOpening',experience:'priorExperience',history:'priorHistory',ending:'priorEnding'};el.textContent=detect(p,value(map[p]))});
+    const confirmed=value('confirmedDraft');document.getElementById('confirmedCount').textContent=`确认稿约 ${count(confirmed)} 字`;
+    const checks=['place','reason','accuracy','flow'].every(k=>state[`check:${k}`]);const done=confirmed&&checks;
+    document.getElementById('statusTitle').textContent=done?'完成状态：可以誊写':'完成状态：还在修改';
+    document.getElementById('statusText').textContent=done?'孩子已确认全文并完成检查。下一步只需誊写到学校作文纸。':'确认全文并完成四项检查后，再誊写到学校作文纸。';
+    document.getElementById('printDraft').textContent=confirmed||state.generatedDraft||'';
+  };
+  document.querySelectorAll('[data-save]').forEach(el=>{if(state[el.id]!==undefined)el.value=state[el.id];el.addEventListener('input',()=>{state[el.id]=el.value;save();sync()})});
+  document.querySelectorAll('[data-radio]').forEach(el=>{el.checked=state.route===el.value;el.addEventListener('change',()=>{state.route=el.value;save()})});
+  document.querySelectorAll('[data-check]').forEach(el=>{const k=`check:${el.dataset.check}`;el.checked=Boolean(state[k]);el.addEventListener('change',()=>{state[k]=el.checked;save();sync()})});
+  document.querySelectorAll('[data-next]').forEach(b=>b.addEventListener('click',()=>show(current+1)));document.querySelectorAll('[data-back]').forEach(b=>b.addEventListener('click',()=>show(current-1)));
+  document.querySelectorAll('[data-open]').forEach(b=>b.addEventListener('click',()=>document.getElementById(b.dataset.open).showModal()));document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>b.closest('dialog').close()));
+  document.getElementById('buildDraft').addEventListener('click',()=>{const parts=[value('opening'),value('bodyExperience'),value('bodyHistory'),value('ending')].filter(Boolean);const text=parts.join('\n\n');state.generatedDraft=text;save();setBlock(document.getElementById('draft'),text,'四段还没有记录完整。请回到缺少的段落。');const n=count(text);document.getElementById('draftCount').textContent=`当前约 ${n} 字｜学校本次目标约500字`;let advice='先看内容是否完整，再看字数。';if(n>0&&n<430)advice='先查两个主体段：缺具体证据，还是缺“为什么值得去”？只补缺口，不加新景点。';if(n>=430&&n<=550)advice='篇幅接近目标。现在读通全文，删重复，核事实，改标点。';if(n>550)advice='先删重复和旁支知识，保留能证明推荐理由的细节。';document.getElementById('lengthAdvice').textContent=advice;sync()});
+  if(state.generatedDraft){setBlock(document.getElementById('draft'),state.generatedDraft,'');document.getElementById('draftCount').textContent=`当前约 ${count(state.generatedDraft)} 字｜学校本次目标约500字`}
+  document.getElementById('copyDraft').addEventListener('click',async()=>{const text=state.generatedDraft||'';if(!text)return;try{await navigator.clipboard.writeText(text);document.getElementById('copyDraft').textContent='已复制'}catch(_){document.getElementById('copyDraft').textContent='请长按选择复制'}});
   document.getElementById('printButton').addEventListener('click',()=>{sync();window.print()});
-  document.getElementById('resetButton').addEventListener('click',()=>{if(!confirm('确定清空这台设备上的全部记录吗？'))return;localStorage.removeItem(KEY);location.reload()});
-
-  // Private data can be imported through the URL fragment; fragments are not sent to GitHub Pages.
-  if(location.hash.startsWith('#import=')){
-    try{
-      const raw=location.hash.slice(8).replace(/-/g,'+').replace(/_/g,'/');
-      const data=JSON.parse(decodeURIComponent(escape(atob(raw))));
-      ['priorExperience','priorHistory','priorCorrection'].forEach(id=>{if(typeof data[id]==='string'&&!value(id)){document.getElementById(id).value=data[id];state[id]=data[id]}});
-      history.replaceState(null,'',location.pathname);save();
-    }catch(_){/* Keep the blank public page usable if the fragment is invalid. */}
-  }
-  sync();show(current);
+  const pack=()=>btoa(unescape(encodeURIComponent(JSON.stringify(state)))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
+  const unpack=raw=>JSON.parse(decodeURIComponent(escape(atob(raw.replace(/-/g,'+').replace(/_/g,'/')))));
+  document.getElementById('exportState').addEventListener('click',async()=>{const code=pack();document.getElementById('transferCode').value=code;try{await navigator.clipboard.writeText(code);document.getElementById('transferStatus').textContent='接力码已复制。'}catch(_){document.getElementById('transferStatus').textContent='接力码已生成，请长按复制。'}});
+  document.getElementById('importState').addEventListener('click',()=>{try{const data=unpack(document.getElementById('transferCode').value.trim());state={...state,...data,step:0};save();location.reload()}catch(_){document.getElementById('transferStatus').textContent='接力码无法识别，请检查是否复制完整。'}});
+  document.getElementById('resetButton').addEventListener('click',()=>{if(!confirm('确定清空这台设备上的本页记录吗？'))return;localStorage.removeItem(KEY);location.reload()});
+  if(location.hash.startsWith('#import=')){try{state={...state,...unpack(location.hash.slice(8)),step:0};history.replaceState(null,'',location.pathname);save()}catch(_){}}
+  save();sync();show(current);
 })();
 </script>
 </body>
