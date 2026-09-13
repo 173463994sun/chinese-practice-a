@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="四年级上册第一单元基础语文学习单，练习字音字形、近义词、声音成语和递进关系。">
+  <title>今日基础语文学习单｜第一单元</title>
+  <style>
+    :root{color-scheme:light;--ink:#172126;--muted:#647078;--paper:#fff;--page:#eef1f2;--line:#d7dcdf;--deep:#214653;--green:#2e705a;--green-soft:#edf6f1;--blue-soft:#eef5f7;--amber:#8b5a1f;--amber-soft:#fff7e9;--focus:#0b72b5}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--page);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;font-size:18px;line-height:1.7;letter-spacing:0}
+    button,input{font:inherit} button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid rgba(11,114,181,.28);outline-offset:3px}
+    .shell{width:min(900px,100%);min-height:100vh;margin:0 auto;background:var(--paper);border-inline:1px solid #dce1e3}
+    header{padding:24px clamp(18px,5vw,48px) 20px;border-bottom:1px solid var(--line)}
+    h1,h2,h3,p{margin-top:0} h1{margin-bottom:4px;font-size:1.8rem;line-height:1.35} h2{font-size:1.38rem;line-height:1.4} h3{font-size:1.06rem;line-height:1.5}
+    .meta,.quiet{color:var(--muted)} .meta{margin:0;font-size:.93rem}
+    .progress{height:6px;background:#e7ebed}.progress span{display:block;width:0;height:100%;background:var(--green);transition:width .2s ease}
+    .route{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:14px clamp(18px,5vw,48px);border-bottom:1px solid var(--line);background:#fafbfb}
+    .route button{min-height:58px;padding:7px 9px;border:1px solid var(--line);border-radius:6px;background:#fff;color:var(--muted);cursor:pointer}
+    .route button strong{display:block;color:var(--deep)} .route button.current{border-color:var(--green);background:var(--green-soft)}
+    main{padding:28px clamp(18px,5vw,48px) 56px}.panel[hidden]{display:none}
+    .notice{margin-bottom:20px;padding:12px 15px;border-left:4px solid var(--green);background:var(--green-soft)}
+    .question{margin:0 0 28px;padding:0 0 26px;border-bottom:1px solid var(--line)} .question:last-of-type{border-bottom:0}
+    .qid{display:inline-block;margin-bottom:8px;color:var(--green);font-weight:800}.stem{font-weight:700}
+    .options{display:grid;gap:10px;margin:14px 0}.choice{display:flex;align-items:flex-start;gap:10px;min-height:52px;padding:11px 13px;border:1px solid var(--line);border-radius:6px;cursor:pointer;background:#fff}
+    .choice:has(input:checked){border-color:var(--green);background:var(--green-soft)} input[type=radio]{width:22px;height:22px;margin-top:4px;accent-color:var(--green)}
+    .word-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}.field label{display:block;margin-bottom:5px;font-weight:700}.field input{width:100%;min-height:52px;padding:9px 12px;border:1px solid var(--line);border-radius:6px;background:#fff}
+    .oral{margin:14px 0;padding:14px 16px;background:var(--blue-soft);border-radius:6px}.oral p:last-child{margin-bottom:0}
+    .checkline{display:flex;align-items:center;gap:10px;margin:12px 0}.checkline input{width:22px;height:22px;accent-color:var(--green)}
+    details{margin:14px 0;border:1px solid #e5c795;border-radius:6px;background:var(--amber-soft)} summary{padding:11px 14px;color:#71450f;font-weight:750;cursor:pointer}.help{padding:0 14px 13px}.help p:last-child{margin-bottom:0}
+    .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}.btn{min-height:48px;padding:9px 17px;border:1px solid var(--deep);border-radius:6px;background:var(--deep);color:#fff;font-weight:750;cursor:pointer}.btn.secondary{background:#fff;color:var(--deep)}.btn.done{border-color:var(--green);background:var(--green)}
+    .status{min-height:30px;margin-top:12px;color:var(--green);font-weight:700}.finish{padding:22px;border:1px solid var(--green);border-radius:6px;background:var(--green-soft)}
+    textarea{width:100%;min-height:210px;padding:13px;border:1px solid var(--line);border-radius:6px;background:#fff;color:var(--ink);font:inherit;line-height:1.55;resize:vertical}
+    footer{padding:17px clamp(18px,5vw,48px) 26px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+    @media(max-width:660px){body{font-size:17px}.route{grid-template-columns:1fr 1fr}.word-row{grid-template-columns:1fr}h1{font-size:1.52rem}}
+    @media print{body{background:#fff}.shell{width:100%;border:0}.route,.progress,.actions,details,footer{display:none!important}.panel[hidden]{display:block;page-break-before:always}.panel:first-child{page-break-before:auto}}
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <h1>今日基础语文学习单</h1>
+      <p class="meta">四年级上册第一单元｜字音字形、近义词、成语情境、词句关系｜约 12—15 分钟</p>
+    </header>
+    <div class="progress" aria-hidden="true"><span id="bar"></span></div>
+    <nav class="route" aria-label="学习步骤">
+      <button class="current" data-go="1"><strong>1 字音字形</strong>B1—B2</button>
+      <button data-go="2"><strong>2 词语关系</strong>B3—B4</button>
+      <button data-go="3"><strong>3 放进情境</strong>B5—B6</button>
+      <button data-go="4"><strong>4 关系词</strong>B7</button>
+    </nav>
+
+    <main>
+      <section class="panel" data-panel="1">
+        <h2>第一步　把音和字认准</h2>
+        <div class="notice">先自己选。这里不显示答案，选完只说一句理由。</div>
+
+        <article class="question">
+          <span class="qid">B1 多音字和读音</span>
+          <p class="stem">下列加点字的读音全部正确的一项是（　　）</p>
+          <div class="options">
+            <label class="choice"><input type="radio" name="b1" value="A">A．号称（chēng）　屹立（qì）　眨眼（zhǎ）　山崩地裂（bèng）</label>
+            <label class="choice"><input type="radio" name="b1" value="B">B．薄雾（bó）　模糊（mú）　运载（zài）　风号浪吼（hào）</label>
+            <label class="choice"><input type="radio" name="b1" value="C">C．坠落（zhuì）　闷雷（mèn）　鹿柴（zhài）　拾金不昧（mèi）</label>
+            <label class="choice"><input type="radio" name="b1" value="D">D．闪烁（lè）　震动（zhèn）　颤动（zhàn）　悄无声息（qiǎo）</label>
+          </div>
+          <label class="checkline"><input type="checkbox" data-check="b1reason">我已口述：另外三项各有哪个读音需要再想一想。</label>
+        </article>
+
+        <article class="question">
+          <span class="qid">B2 字形辨认</span>
+          <p class="stem">下列词语书写有误的一项是（　　）</p>
+          <div class="options">
+            <label class="choice"><input type="radio" name="b2" value="A">A．余波　依旧　农历</label>
+            <label class="choice"><input type="radio" name="b2" value="B">B．修补　风俗　招侍</label>
+            <label class="choice"><input type="radio" name="b2" value="C">C．传说　牵引　填写</label>
+            <label class="choice"><input type="radio" name="b2" value="D">D．堵塞　震惊　鹅卵石</label>
+          </div>
+          <label class="checkline"><input type="checkbox" data-check="b2oral">我已口述正确写法，并说明是哪个字写错了。</label>
+        </article>
+
+        <div class="actions"><button class="btn" data-next="2">进入词语关系</button></div>
+        <p class="status" aria-live="polite"></p>
+      </section>
+
+      <section class="panel" data-panel="2" hidden>
+        <h2>第二步　看清词语之间的关系</h2>
+        <div class="notice">昨天已经能找出一组反义词，今天向前一步，换成课内近义词。</div>
+
+        <article class="question">
+          <span class="qid">B3 近义词</span>
+          <p class="stem">写出下列词语的近义词。</p>
+          <div class="word-row">
+            <div class="field"><label for="b3a">倦 →</label><input id="b3a" data-text="b3a" autocomplete="off"></div>
+            <div class="field"><label for="b3b">瞬 →</label><input id="b3b" data-text="b3b" autocomplete="off"></div>
+          </div>
+          <label class="checkline"><input type="checkbox" data-check="b3replace">我把自己写的词放回原词的位置读了一遍，句子意思基本不变。</label>
+          <details data-help="b3"><summary>卡住时再打开：怎样找近义词</summary><div class="help"><p>先说原词在句子里是什么意思，再换成另一个意思接近的词，最后把整句读一遍。帮助只给动作，不给本题答案。</p></div></details>
+        </article>
+
+        <article class="question">
+          <span class="qid">B4 相同环境，不同用法</span>
+          <p class="stem">“鸦雀无声、悄无声息”这两个词是写怎样的环境的？（　　）</p>
+          <div class="options">
+            <label class="choice"><input type="radio" name="b4" value="A">A．热闹</label>
+            <label class="choice"><input type="radio" name="b4" value="B">B．紧张</label>
+            <label class="choice"><input type="radio" name="b4" value="C">C．安静</label>
+            <label class="choice"><input type="radio" name="b4" value="D">D．刺激</label>
+          </div>
+          <div class="oral"><p><strong>口述加一步：</strong>这两个词都和安静有关，但一个更常说整个场面，一个还可以说某个动作没有被人发现。各说一个场景，不写下来。</p></div>
+          <label class="checkline"><input type="checkbox" data-check="b4oral">两个场景都说完了。</label>
+        </article>
+
+        <div class="actions"><button class="btn secondary" data-prev="1">返回</button><button class="btn" data-next="3">进入情境题</button></div>
+        <p class="status" aria-live="polite"></p>
+      </section>
+
+      <section class="panel" data-panel="3" hidden>
+        <h2>第三步　把词放回具体情境</h2>
+        <div class="notice">不背词典解释。先找场景里的声音线索，再选择。</div>
+
+        <article class="question">
+          <span class="qid">B5 声音成语</span>
+          <p class="stem">“舞台上模拟的江潮奔涌而来，浪头翻滚如万马奔腾，声音震得观众席都在颤动。”下列成语最贴合该画面的是（　　）</p>
+          <div class="options">
+            <label class="choice"><input type="radio" name="b5" value="A">A．锣鼓喧天</label>
+            <label class="choice"><input type="radio" name="b5" value="B">B．震耳欲聋</label>
+            <label class="choice"><input type="radio" name="b5" value="C">C．人声鼎沸</label>
+            <label class="choice"><input type="radio" name="b5" value="D">D．人山人海</label>
+          </div>
+          <div class="oral"><p><strong>口述理由只说两点：</strong>场景里是什么在发声？哪一句最能证明声音的特点？</p></div>
+          <label class="checkline"><input type="checkbox" data-check="b5reason">我没有只报词语，还说了两条线索。</label>
+          <details data-help="b5"><summary>卡住时再打开：声音词检查尺</summary><div class="help"><p>依次检查：谁在发声、声音大还是小、是热闹还是让耳朵难受、传播得远不远。只选题目真正强调的特点。</p></div></details>
+        </article>
+
+        <article class="question">
+          <span class="qid">B6 词语意思落到画面</span>
+          <p class="stem">不用写。任选一个词，口述一个别人能够“看见和听见”的场景。</p>
+          <div class="options">
+            <label class="choice"><input type="radio" name="b6" value="低声细语">低声细语</label>
+            <label class="choice"><input type="radio" name="b6" value="窃窃私语">窃窃私语</label>
+            <label class="choice"><input type="radio" name="b6" value="人声鼎沸">人声鼎沸</label>
+            <label class="choice"><input type="radio" name="b6" value="响彻云霄">响彻云霄</label>
+          </div>
+          <div class="oral"><p><strong>说清三件事：</strong>在哪里，谁在做什么，声音听起来怎样。词语放在最后再说。</p></div>
+          <label class="checkline"><input type="checkbox" data-check="b6oral">我说的场景里有地点、人物动作和声音特点。</label>
+        </article>
+
+        <div class="actions"><button class="btn secondary" data-prev="2">返回</button><button class="btn" data-next="4">进入关系词</button></div>
+        <p class="status" aria-live="polite"></p>
+      </section>
+
+      <section class="panel" data-panel="4" hidden>
+        <h2>第四步　把“乃至”前后的台阶搭起来</h2>
+        <div class="notice">昨天能读到“乃至”，但没有留下清楚的独立运用证据。今天只练一个关键：后面一层要比前面更深。</div>
+
+        <article class="question">
+          <span class="qid">B7 先排台阶，再口述一句</span>
+          <p class="stem">先在下面三句中选出词序排列正确的一句。</p>
+          <div class="options">
+            <label class="choice"><input type="radio" name="b7" value="1">① 长期以来，人类只知道享受、索取乃至掠夺大自然。</label>
+            <label class="choice"><input type="radio" name="b7" value="2">② 长期以来，人类只知道索取、享受乃至掠夺大自然。</label>
+            <label class="choice"><input type="radio" name="b7" value="3">③ 长期以来，人类只知道掠夺、索取乃至享受大自然。</label>
+          </div>
+          <div class="oral">
+            <p><strong>再口述一句：</strong>仿照“总是淡视、漠视大自然父性，乃至还自以为是大自然的主宰”，用“乃至”说一句话。</p>
+            <p>先说前一层，再说更深的一层。不要照抄例句，也不用把口述写下来。</p>
+          </div>
+          <label class="checkline"><input type="checkbox" data-check="b7oral">我说完后检查了：“乃至”后面的情况确实更深。</label>
+          <details data-help="b7"><summary>卡住时再打开：只搭空台阶</summary><div class="help"><p>先选一件熟悉的事。说“已经发生的普通情况”，停一下；再问“更进一步会怎样”；最后把“乃至”放在更进一步的情况前。这里没有现成内容，需要用你自己的事。</p></div></details>
+        </article>
+
+        <div class="finish">
+          <h3>完成前自己检查</h3>
+          <label class="checkline"><input type="checkbox" data-check="final1">B1—B7都完成了，没有把“已口述”当成“想过了”。</label>
+          <label class="checkline"><input type="checkbox" data-check="final2">需要说理由的题，我说出了句子里的线索。</label>
+          <label class="checkline"><input type="checkbox" data-check="final3">我能告诉家长：哪一道最轻松，哪一道最卡。</label>
+        </div>
+        <div class="actions"><button class="btn secondary" data-prev="3">返回</button><button class="btn" id="makeReport">生成反馈</button><button class="btn secondary" id="copyReport">复制反馈</button></div>
+        <p class="status" id="copyStatus" aria-live="polite"></p>
+        <textarea id="report" aria-label="今日学习反馈" readonly></textarea>
+      </section>
+    </main>
+    <footer>本页不显示答案，不上传作答。选择、勾选和反馈只保存在当前浏览器。听写、阅读和写作按各自线路另行完成。</footer>
+  </div>
+  <script>
+    const key='chinese-basic-u1-20260913-v1';
+    const panels=[...document.querySelectorAll('[data-panel]')];
+    const routes=[...document.querySelectorAll('[data-go]')];
+    const helps=[...document.querySelectorAll('[data-help]')];
+    const state=JSON.parse(localStorage.getItem(key)||'{"panel":1,"help":[]}');
+    function save(){localStorage.setItem(key,JSON.stringify(state));}
+    function selected(name){return document.querySelector(`input[name="${name}"]:checked`)?.value||'';}
+    function show(n){state.panel=n;panels.forEach(p=>p.hidden=Number(p.dataset.panel)!==n);routes.forEach(b=>b.classList.toggle('current',Number(b.dataset.go)===n));document.getElementById('bar').style.width=`${n*25}%`;save();window.scrollTo({top:0,behavior:'smooth'});}
+    function restore(){
+      document.querySelectorAll('input[type=radio]').forEach(el=>{if(state[el.name]===el.value)el.checked=true;el.addEventListener('change',()=>{state[el.name]=el.value;save();});});
+      document.querySelectorAll('[data-check]').forEach(el=>{el.checked=!!state[el.dataset.check];el.addEventListener('change',()=>{state[el.dataset.check]=el.checked;save();});});
+      document.querySelectorAll('[data-text]').forEach(el=>{el.value=state[el.dataset.text]||'';el.addEventListener('input',()=>{state[el.dataset.text]=el.value;save();});});
+      helps.forEach(d=>{d.open=state.help.includes(d.dataset.help);d.addEventListener('toggle',()=>{const id=d.dataset.help;if(d.open&&!state.help.includes(id))state.help.push(id);save();});});
+      show(state.panel||1);
+    }
+    function need(list,panel){const missing=list.filter(x=>!x.ok());if(!missing.length)return true;const box=document.querySelector(`[data-panel="${panel}"] .status`);box.textContent=`还差：${missing.map(x=>x.label).join('、')}`;return false;}
+    document.querySelectorAll('[data-next]').forEach(btn=>btn.addEventListener('click',()=>{
+      const n=Number(btn.dataset.next),p=n-1;let req=[];
+      if(p===1)req=[{label:'B1选择',ok:()=>selected('b1')},{label:'B1口述',ok:()=>state.b1reason},{label:'B2选择',ok:()=>selected('b2')},{label:'B2口述',ok:()=>state.b2oral}];
+      if(p===2)req=[{label:'B3两个词',ok:()=>state.b3a?.trim()&&state.b3b?.trim()},{label:'B3回读',ok:()=>state.b3replace},{label:'B4选择',ok:()=>selected('b4')},{label:'B4口述',ok:()=>state.b4oral}];
+      if(p===3)req=[{label:'B5选择',ok:()=>selected('b5')},{label:'B5理由',ok:()=>state.b5reason},{label:'B6选择',ok:()=>selected('b6')},{label:'B6口述',ok:()=>state.b6oral}];
+      if(need(req,p))show(n);
+    }));
+    document.querySelectorAll('[data-prev]').forEach(btn=>btn.addEventListener('click',()=>show(Number(btn.dataset.prev))));routes.forEach(btn=>btn.addEventListener('click',()=>show(Number(btn.dataset.go))));
+    function buildReport(){
+      const checks=[...document.querySelectorAll('[data-check]')];
+      const done=checks.filter(x=>x.checked).length;
+      const lines=['9月13日基础语文学习单反馈','B1 选择：'+(selected('b1')||'未答'),'B2 选择：'+(selected('b2')||'未答'),'B3 倦→'+(state.b3a||'未答')+'；瞬→'+(state.b3b||'未答'),'B4 选择：'+(selected('b4')||'未答'),'B5 选择：'+(selected('b5')||'未答'),'B6 口述词：'+(selected('b6')||'未选'),'B7 选择：'+(selected('b7')||'未答'),'口述与检查：'+done+'/'+checks.length,'打开过的方法帮助：'+(state.help.length?state.help.join('、'):'没有'),'最轻松题：____','最卡题：____','家长补充：____'];
+      document.getElementById('report').value=lines.join('\n');return lines.join('\n');
+    }
+    document.getElementById('makeReport').addEventListener('click',()=>{if(!need([{label:'B7选择',ok:()=>selected('b7')},{label:'B7口述检查',ok:()=>state.b7oral}],4))return;buildReport();document.getElementById('copyStatus').textContent='反馈已生成。';});
+    document.getElementById('copyReport').addEventListener('click',async()=>{const txt=buildReport();try{await navigator.clipboard.writeText(txt);document.getElementById('copyStatus').textContent='已复制，可以直接发给家长。';}catch{document.getElementById('report').select();document.getElementById('copyStatus').textContent='请长按反馈文字复制。';}});
+    restore();buildReport();
+  </script>
+</body>
+</html>

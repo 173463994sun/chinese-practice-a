@@ -4,6 +4,7 @@
 
 - 页面内容：第一单元综合练习 04
 - 当前阅读专项页：`reading/slot-match-bridge/`
+- 当前基础语文页：`basic/u1-20260913/`
 - 当前独立写作页：`writing/tiananmen-full-bridge/`
 - 历史写作页：`writing/forbidden-city-public-bridge/`、`writing/forbidden-city-one-reason-bridge/`
 - 作答状态：仅保存在当前浏览器，不跨设备同步
